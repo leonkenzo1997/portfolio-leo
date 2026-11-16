@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Truong Tang Quang (Leo) — Senior Backend &amp; AI-Native Software Engineer</title>
+  <meta
+    name="description"
+    content="Portfolio and 13 production software architectures by Truong Tang Quang (Leo) — Senior Backend Software Engineer (Golang, Node.js/NestJS) orienting toward AI-Native Engineering."
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark">LQ</span>
+        <span>Truong Tang Quang <span style="color: var(--text-muted); font-weight: 500;">(Leo)</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#projects">Projects (13)</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="./cv.html" class="btn btn-sm">Web CV</a>
+        <a href="./Truong-Tang-Quang-CV.pdf" download="Truong-Tang-Quang-CV.pdf" class="btn btn-sm btn-primary">
+          Download 2-Page CV
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          Senior Backend Engineer &bull; Orienting toward AI-Native Engineering
+        </div>
+
+        <h1>Truong Tang Quang (Leo)</h1>
+        <p class="hero-subtitle">Senior Backend Software Engineer (Golang &amp; Node.js) | AI-Native Engineering</p>
+
+        <p class="hero-desc">
+          Backend Software Engineer with a Bachelor of Computer Science and <strong>5+ years</strong> of hands-on experience building scalable distributed systems, event-driven microservices, and enterprise APIs in <strong>Golang</strong> and <strong>Node.js (NestJS / TypeScript)</strong>. Currently driving production AI-Native software delivery—integrating multimodal LLM &amp; RAG pipelines, Anti-Corruption Layers, and multi-agent engineering harnesses across high-availability retail and media platforms.
+        </p>
+
+        <div class="hero-cta">
+          <a href="./Truong-Tang-Quang-CV.pdf" download="Truong-Tang-Quang-CV.pdf" class="btn btn-primary">
+            Download 2-Page CV (PDF)
+          </a>
+          <a href="./cv.html" class="btn">
+            View Print-Ready Web CV
+          </a>
+          <a href="https://github.com/leonkenzo1997" target="_blank" rel="noopener" class="btn">
+            GitHub (@leonkenzo1997)
+          </a>
+          <a href="https://www.linkedin.com/in/quang-truong-tang-1ba617157/" target="_blank" rel="noopener" class="btn">
+            LinkedIn
+          </a>
+          <a href="mailto:truongtangquang1997@gmail.com" class="btn">
+            truongtangquang1997@gmail.com
+          </a>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-value">5+ Years</div>
+            <div class="metric-label">Production Backend Engineering (Golang, Node.js / NestJS, TypeScript)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">13 Systems</div>
+            <div class="metric-label">Production Platforms Delivered Across AI, Logistics, IoT, Media &amp; Telecom</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">26+ Services</div>
+            <div class="metric-label">Go Microservices Architected Across COSMO8 (9) &amp; RMN (17) + Revideo Worker</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">4,300+ Commits</div>
+            <div class="metric-label">AI-Native Multi-Agent Delivery Across Production Monorepos at MTS</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALL 13 PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Project Archive</div>
+            <h2 class="section-title">All 13 Production Systems &amp; Architectures</h2>
+            <p class="section-sub">
+              Detailed archive backing my 2-page CV. Filter by domain or technology stack, or open any card to inspect full architectural responsibilities.
+            </p>
+          </div>
+        </div>
+
+        <div class="controls-panel">
+          <div class="controls-top">
+            <div id="categoryPills" class="filter-pills" role="tablist" aria-label="Project domain filters">
+              <button type="button" class="pill active" data-category="all">All Projects (13)</button>
+              <button type="button" class="pill" data-category="ai-retail">AI &amp; Retail Tech (2)</button>
+              <button type="button" class="pill" data-category="logistics">Logistics &amp; Supply Chain (2)</button>
+              <button type="button" class="pill" data-category="enterprise-iot">Enterprise &amp; IoT (3)</button>
+              <button type="button" class="pill" data-category="media-edtech">Media, EdTech &amp; Marketplace (4)</button>
+              <button type="button" class="pill" data-category="telecom">Telecom &amp; Carrier Billing (2)</button>
+            </div>
+
+            <div class="search-wrap">
+              <input
+                type="search"
+                id="projectSearch"
+                class="search-input"
+                placeholder="Search project, stack, client..."
+                aria-label="Search projects"
+              />
+              <button type="button" id="searchClear" class="search-clear" aria-label="Clear search">&times;</button>
+            </div>
+          </div>
+
+          <div id="quickTechBar" class="tech-quick-bar"></div>
+        </div>
+
+        <div id="resultsMeta" class="results-meta"></div>
+        <div id="projectsGrid" class="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Core Competencies</div>
+            <h2 class="section-title">Technical Skills (6 Domains)</h2>
+          </div>
+        </div>
+
+        <div class="skills-matrix">
+          <div class="skill-box">
+            <h3>AI &amp; Agentic Engineering</h3>
+            <p>
+              Multimodal LLM Orchestration, RAG &amp; Hybrid Vector Search, Multi-Agent Workflows, Model Context Protocol (MCP), Context &amp; Prompt Engineering, AI-Augmented TDD &amp; Automated Code Review | Azure OpenAI (GPT-4o Vision/Text, text-embedding-3-large), Gemini, Groq, Cloudflare Workers AI (FLUX), Azure AI Search, Claude Code, Antigravity
+            </p>
+          </div>
+          <div class="skill-box">
+            <h3>Backend Architecture</h3>
+            <p>
+              Golang (Gin, GORM, Google Wire, Goose), Node.js, TypeScript / JavaScript (NestJS, Express.js) | Microservices, Event-Driven Architecture, Anti-Corruption Layer (ACL), RESTful APIs, WebSocket, OAuth2 / JWT / PASETO, TOTP 2FA (AES-256-GCM)
+            </p>
+          </div>
+          <div class="skill-box">
+            <h3>Data &amp; Messaging</h3>
+            <p>
+              PostgreSQL 16, CockroachDB, MySQL / MariaDB (GORM, TypeORM, Sequelize), MongoDB (Mongoose), Redis (Azure Cache for Redis), Apache Kafka, Azure Event Hubs, RabbitMQ, Elasticsearch
+            </p>
+          </div>
+          <div class="skill-box">
+            <h3>Cloud &amp; DevOps</h3>
+            <p>
+              Microsoft Azure (AKS, ACR, Blob Storage, CDN, AI Search, IoT Hub), AWS (EC2, S3, Lambda), Kubernetes, ArgoCD (GitOps), Helm, Docker, PM2, GitHub Actions &amp; GitLab CI/CD, Nginx, HAProxy, Grafana, Loki, Linux
+            </p>
+          </div>
+          <div class="skill-box">
+            <h3>Frontend &amp; Tooling</h3>
+            <p>
+              ReactJS, Flutter Web (Riverpod, BLoC) | Git, Jest, Supertest, OpenAPI / Swagger, ClickUp, Jira, Notion, Agile / Scrum
+            </p>
+          </div>
+          <div class="skill-box">
+            <h3>Languages</h3>
+            <p>
+              English (Professional Working Proficiency) &bull; Vietnamese (Native)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Career Progression</div>
+            <h2 class="section-title">Work Experience (6 Roles)</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="exp-card">
+            <div class="exp-top">
+              <div class="exp-role">AI-Native Software Engineer (Core Backend) &mdash; <span class="exp-company">MTS Corporation VN</span></div>
+              <div class="exp-date">01/2026 – Present &bull; Ho Chi Minh City</div>
+            </div>
+            <ul class="highlight-list">
+              <li>Architected and built production Go microservices (9 services for COSMO8; 17 services + Node.js Revideo worker for RMN) backed by PostgreSQL 16, CockroachDB, Redis, and Apache Kafka (Azure Event Hubs).</li>
+              <li>Engineered multimodal AI &amp; RAG pipelines: GPT-4o Vision/Text + Azure AI Search for sub-5s P95 skin diagnostics &amp; grounded SKU curation (COSMO8), and multi-LLM/image failover gateway with automated 90s ad video rendering (RMN).</li>
+              <li>Designed SmartPOS Anti-Corruption Layers (5 adapters, HMAC webhooks, transactional outbox), real-time WebSocket Android TV multi-zone signage orchestration, and AES-256-GCM TOTP 2FA &amp; PASETO/Redis auth.</li>
+              <li>Built multi-agent AI engineering harnesses (.claude / .agents) with automated cross-model code review gates, knowledge-graph indexing, RED-GREEN TDD workflows, and Kubernetes (AKS) + ArgoCD GitOps CI/CD.</li>
+            </ul>
+          </article>
+
+          <article class="exp-card">
+            <div class="exp-top">
+              <div class="exp-role">Freelance Backend Developer &mdash; <span class="exp-company">GiaPhuoc-Express</span></div>
+              <div class="exp-date">06/2025 – 03/2026 &bull; Ho Chi Minh City</div>
+            </div>
+            <ul class="highlight-list">
+              <li>Engineered core backend services for a nationwide inter-station express freight and cash-remittance platform using Node.js 20, TypeScript (strict mode), Express.js, Zod, 4-tier JWT RBAC, and MongoDB (Mongoose).</li>
+              <li>Architected the automated daily inter-station debt reconciliation engine and PM2 cronjobs—enforcing Vietnam-to-UTC timezone boundaries, idempotent execution locks, atomic MongoDB bulkWrite transactions, and aggregation-based DebtReport &amp; accounting export APIs.</li>
+              <li>Built inbound/return parcel workflows, inter-branch cash &amp; COD remittances, proof-of-delivery image upload pipelines (Multer), Zalo ZNS/SMS notifications, and Jest/Supertest integration tests deployed via GitHub Actions CI/CD.</li>
+            </ul>
+          </article>
+
+          <article class="exp-card">
+            <div class="exp-top">
+              <div class="exp-role">Backend Developer &mdash; <span class="exp-company">Link Technology Crossborder</span></div>
+              <div class="exp-date">04/2025 – 08/2025 &bull; Ho Chi Minh City</div>
+            </div>
+            <ul class="highlight-list">
+              <li>Designed and built Pulse-SDMS from scratch using Golang (Gin) and MySQL—an internal deployment and release-version management system orchestrating servers across company projects.</li>
+              <li>Maintained and enhanced distributed microservices for the Pulseim enterprise messaging suite (gateway-server, im-server, chat-server), implementing revamped login flows, group-chat APIs, and merchant account management.</li>
+              <li>Resolved staging/dev deployment bottlenecks and maintained containerized infrastructure on AWS (EC2, S3) and Docker within a 15-member cross-border engineering team.</li>
+            </ul>
+          </article>
+
+          <article class="exp-card">
+            <div class="exp-top">
+              <div class="exp-role">Backend Developer &mdash; <span class="exp-company">Brickmate Group VN</span></div>
+              <div class="exp-date">07/2020 – 12/2024 &bull; Ho Chi Minh City</div>
+            </div>
+            <ul class="highlight-list">
+              <li>Architected and delivered backend systems from inception to production for 7 international products across IoT smart buildings (Chocolat, Chocolat PC), e-commerce logistics (Busk), EdTech (Search Class), media streaming (OMN, Terafty), and auto auctions (SC Road) using Node.js (NestJS, Express.js) and TypeScript.</li>
+              <li>Optimized data-retrieval queries and refactored backend architecture on the Busk logistics platform—reducing API response time by 20%—and integrated Shopee Open APIs for real-time order processing and multi-warehouse inventory sync.</li>
+              <li>Built real-time IoT device telemetry and remote-control backends for Kumho Electronic via Azure IoT Hub, Azure Blob Storage, SHA-512 payload encryption, and scheduled power-consumption aggregation cron jobs.</li>
+              <li>Implemented asynchronous RabbitMQ message queues, OAuth2 social logins (Google, KakaoTalk, Naver), relational/NoSQL schemas (MySQL/TypeORM, MongoDB, Firebase, Redis), and GitLab CI/CD pipelines on AWS and Azure.</li>
+            </ul>
+          </article>
+
+          <article class="exp-card">
+            <div class="exp-top">
+              <div class="exp-role">Fullstack Developer &mdash; <span class="exp-company">VHT Company (Virtual Hybrid Telecom)</span></div>
+              <div class="exp-date">11/2019 – 06/2020 &bull; Ho Chi Minh City</div>
+            </div>
+            <ul class="highlight-list">
+              <li>Developed enterprise SIP Trunk hotline and telecom package management platforms for Viettel Group and Mobifone using React, PHP, MariaDB, Redis, Elasticsearch, and Docker.</li>
+              <li>Integrated directly with carrier billing servers for real-time subscription synchronization, automated monthly/annual package renewals, and high-volume telecom data processing.</li>
+            </ul>
+          </article>
+
+          <article class="exp-card">
+            <div class="exp-top">
+              <div class="exp-role">Internship Developer &mdash; <span class="exp-company">VHT Company (Virtual Hybrid Telecom)</span></div>
+              <div class="exp-date">07/2019 – 10/2019 &bull; Ho Chi Minh City</div>
+            </div>
+            <ul class="highlight-list">
+              <li>Gained hands-on experience with production telecom infrastructure and distributed system patterns (microservices, MVC architecture, Docker, HAProxy load balancing) and independently provisioned staging/test servers in agile workflows.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION (AT THE BOTTOM) -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Academic Background</div>
+            <h2 class="section-title">Education &amp; Certifications</h2>
+          </div>
+        </div>
+
+        <div class="edu-grid">
+          <div class="edu-card">
+            <h3>University of Greenwich (FPT Academy)</h3>
+            <div class="edu-meta">Bachelor of Computer Science &bull; 10/2015 – 06/2020</div>
+            <p>Second Class Honours | Graduated</p>
+          </div>
+          <div class="edu-card">
+            <h3>Cybersoft Academy</h3>
+            <div class="edu-meta">Software Engineering Certifications &bull; 03/2019 – 12/2019</div>
+            <p>Completed Front-End Development (06/2019 – 12/2019) &amp; Java / OOP (03/2019 – 05/2019)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Truong Tang Quang (Leo)</strong> &bull; Ho Chi Minh City, Vietnam &bull; +84 799 759 531
+      </div>
+      <div class="footer-links">
+        <a href="mailto:truongtangquang1997@gmail.com">truongtangquang1997@gmail.com</a>
+        <a href="https://github.com/leonkenzo1997" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/quang-truong-tang-1ba617157/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="./Truong-Tang-Quang-CV.pdf" download="Truong-Tang-Quang-CV.pdf">Download 2-Page CV (PDF)</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT DETAIL MODAL -->
+  <div id="projectModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Project architecture details">
+    <div class="modal-dialog" id="modalBody"></div>
+  </div>
+
+  <script src="./projects.js"></script>
+</body>
+</html>

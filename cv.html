@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Truong Tang Quang (Leo) — Senior Backend Software Engineer CV</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 12mm 14mm;
+    }
+
+    :root {
+      --ink: #0f172a;
+      --ink-body: #1e293b;
+      --muted: #475569;
+      --accent: #1d4ed8;
+      --accent-dark: #0f295c;
+      --border: #cbd5e1;
+      --bg-soft: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+      color: var(--ink-body);
+      background: #e2e8f0;
+      line-height: 1.48;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Web toolbar (hidden on print/PDF) */
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.25);
+    }
+
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .toolbar a,
+    .toolbar button {
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      padding: 6px 12px;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
+      color: #f8fafc;
+      transition: background 0.15s ease;
+    }
+
+    .toolbar a:hover,
+    .toolbar button:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .toolbar .btn-primary {
+      background: #2563eb;
+      border-color: #2563eb;
+    }
+
+    .toolbar .btn-primary:hover {
+      background: #1d4ed8;
+    }
+
+    /* Page canvas for screen preview */
+    .cv-sheet {
+      max-width: 210mm;
+      margin: 20px auto;
+      background: #ffffff;
+      padding: 12mm 14mm;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+    }
+
+    /* Header */
+    .cv-header {
+      border-bottom: 2px solid var(--accent-dark);
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+
+    .cv-name {
+      font-size: 22.5px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      color: var(--accent-dark);
+      line-height: 1.15;
+    }
+
+    .cv-headline {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-top: 3px;
+      margin-bottom: 6px;
+    }
+
+    .cv-contact-row {
+      font-size: 9px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3px 7px;
+      line-height: 1.48;
+    }
+
+    .cv-contact-row + .cv-contact-row {
+      margin-top: 2px;
+    }
+
+    .cv-contact-item {
+      white-space: nowrap;
+    }
+
+    .cv-contact-sep {
+      color: #94a3b8;
+    }
+
+    .cv-contact-row a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .cv-contact-row a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section Headings */
+    .section {
+      margin-bottom: 13px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: var(--accent-dark);
+      border-bottom: 1.2px solid var(--border);
+      padding-bottom: 3px;
+      margin-bottom: 7.5px;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    .section-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1.2px solid var(--border);
+      padding-bottom: 3px;
+      margin-bottom: 7.5px;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    .section-title-row .section-title {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .portfolio-cta {
+      font-size: 9.3px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .portfolio-cta a {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* Profile */
+    .profile-text {
+      font-size: 10px;
+      line-height: 1.52;
+      color: var(--ink-body);
+      text-align: left;
+    }
+
+    /* Skills Table */
+    .skills-grid {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.5px;
+      line-height: 1.45;
+    }
+
+    .skills-grid tr {
+      border-bottom: 0.6px solid #e2e8f0;
+      break-inside: avoid;
+    }
+
+    .skills-grid tr:last-child {
+      border-bottom: none;
+    }
+
+    .skills-grid td {
+      padding: 4px 0;
+      vertical-align: top;
+    }
+
+    .skills-cat {
+      width: 112px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      padding-right: 10px;
+      white-space: nowrap;
+    }
+
+    /* Experience & Projects */
+    .entry {
+      margin-bottom: 10px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .entry-title-group {
+      font-size: 10.4px;
+      color: var(--ink);
+    }
+
+    .entry-org {
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .entry-role {
+      font-weight: 600;
+      color: var(--accent-dark);
+    }
+
+    .entry-meta {
+      font-size: 9.2px;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .entry-submeta {
+      font-size: 9px;
+      color: var(--muted);
+      margin-top: 2px;
+      margin-bottom: 3px;
+      font-style: italic;
+    }
+
+    .bullets {
+      list-style: none;
+      margin-top: 3.5px;
+      padding-left: 0;
+    }
+
+    .bullets li {
+      position: relative;
+      padding-left: 11px;
+      font-size: 9.75px;
+      line-height: 1.46;
+      margin-bottom: 3px;
+      color: var(--ink-body);
+    }
+
+    .bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 1px;
+      top: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .bullets li:last-child {
+      margin-bottom: 0;
+    }
+
+    .bullets strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .bullets code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 8.9px;
+      background: #f1f5f9;
+      padding: 0 3px;
+      border-radius: 3px;
+      color: var(--accent-dark);
+    }
+
+    /* Education */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9.6px;
+      margin-bottom: 3.5px;
+      break-inside: avoid;
+    }
+
+    .edu-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-school {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .edu-detail {
+      color: var(--ink-body);
+    }
+
+    .edu-date {
+      font-size: 9.1px;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+      margin-left: 10px;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .toolbar {
+        display: none !important;
+      }
+
+      .cv-sheet {
+        max-width: none;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      a {
+        color: var(--accent-dark);
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar no-print">
+    <div class="toolbar-left">
+      <a href="./index.html">&larr; Back to Portfolio (All 13 Projects)</a>
+      <span>ATS-Friendly 2-Page Resume</span>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <button type="button" onclick="window.print()">Print</button>
+      <a class="btn-primary" href="./Truong-Tang-Quang-CV.pdf" download="Truong-Tang-Quang-CV.pdf">Download 2-Page PDF</a>
+    </div>
+  </div>
+
+  <main class="cv-sheet">
+    <!-- HEADER -->
+    <header class="cv-header">
+      <h1 class="cv-name">TRUONG TANG QUANG (LEO)</h1>
+      <div class="cv-headline">Senior Backend Software Engineer (Golang &amp; Node.js) | AI-Native Engineering</div>
+      <div class="cv-contact-row">
+        <span class="cv-contact-item">Ho Chi Minh City, Vietnam</span>
+        <span class="cv-contact-sep">&bull;</span>
+        <span class="cv-contact-item">+84 799 759 531</span>
+        <span class="cv-contact-sep">&bull;</span>
+        <span class="cv-contact-item"><a href="mailto:truongtangquang1997@gmail.com">truongtangquang1997@gmail.com</a></span>
+      </div>
+      <div class="cv-contact-row">
+        <span class="cv-contact-item">Portfolio: <a href="https://leonkenzo1997.github.io" target="_blank" rel="noopener">https://leonkenzo1997.github.io</a></span>
+        <span class="cv-contact-sep">&bull;</span>
+        <span class="cv-contact-item">GitHub: <a href="https://github.com/leonkenzo1997" target="_blank" rel="noopener">https://github.com/leonkenzo1997</a></span>
+        <span class="cv-contact-sep">&bull;</span>
+        <span class="cv-contact-item">LinkedIn: <a href="https://www.linkedin.com/in/quang-truong-tang-1ba617157/" target="_blank" rel="noopener">linkedin.com/in/quang-truong-tang-1ba617157</a></span>
+      </div>
+    </header>
+
+    <!-- PROFILE -->
+    <section class="section">
+      <h2 class="section-title">Profile</h2>
+      <p class="profile-text">
+        Experienced Backend Software Engineer with a Bachelor of Computer Science and over 5 years of hands-on experience building scalable server-side applications and microservices using Golang and Node.js (NestJS). Proficient in designing event-driven architectures, RESTful APIs, distributed databases, and third-party integrations with a strong focus on performance optimization and security. Actively orienting toward an AI-Native Software Engineer path—integrating multimodal LLM and RAG pipelines into production backends while leveraging multi-agent AI workflows to accelerate reliable software delivery.
+      </p>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <table class="skills-grid">
+        <tr>
+          <td class="skills-cat">AI &amp; Agentic</td>
+          <td>Multimodal LLM Orchestration, RAG &amp; Hybrid Vector Search, Multi-Agent Workflows, Model Context Protocol (MCP), Context &amp; Prompt Engineering, AI-Augmented TDD &amp; Automated Code Review | <em>Tools &amp; Models:</em> Azure OpenAI (GPT-4o Vision/Text, text-embedding-3-large), Gemini, Groq, Cloudflare Workers AI (FLUX), Azure AI Search, Claude Code, Antigravity</td>
+        </tr>
+        <tr>
+          <td class="skills-cat">Backend</td>
+          <td>Golang (Gin, GORM, Google Wire, Goose), Node.js, TypeScript / JavaScript (NestJS, Express.js) | <em>Architecture:</em> Microservices, Event-Driven Architecture, Anti-Corruption Layer (ACL), RESTful APIs, WebSocket, OAuth2 / JWT / PASETO, TOTP 2FA (AES-256-GCM)</td>
+        </tr>
+        <tr>
+          <td class="skills-cat">Data &amp; Messaging</td>
+          <td>PostgreSQL 16, CockroachDB, MySQL / MariaDB (GORM, TypeORM, Sequelize), MongoDB (Mongoose), Redis (Azure Cache for Redis), Apache Kafka, Azure Event Hubs, RabbitMQ, Elasticsearch</td>
+        </tr>
+        <tr>
+          <td class="skills-cat">Cloud &amp; DevOps</td>
+          <td>Microsoft Azure (AKS, ACR, Blob Storage, CDN, AI Search, IoT Hub), AWS (EC2, S3, Lambda), Kubernetes, ArgoCD (GitOps), Helm, Docker, PM2, GitHub Actions &amp; GitLab CI/CD, Nginx, HAProxy, Grafana, Loki, Linux</td>
+        </tr>
+        <tr>
+          <td class="skills-cat">Frontend &amp; Tools</td>
+          <td>ReactJS, Flutter Web (Riverpod, BLoC) | Git, Jest, Supertest, OpenAPI / Swagger, ClickUp, Jira, Notion, Agile / Scrum</td>
+        </tr>
+        <tr>
+          <td class="skills-cat">Languages</td>
+          <td>English (Professional Working), Vietnamese (Native)</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- WORK EXPERIENCE -->
+    <section class="section">
+      <h2 class="section-title">Work Experience</h2>
+
+      <article class="entry">
+        <div class="entry-header">
+          <div class="entry-title-group">
+            <span class="entry-org">MTS Corporation VN</span> — <span class="entry-role">AI-Native Software Engineer (Core Backend)</span>
+          </div>
+          <div class="entry-meta">01/2026 – Present | Ho Chi Minh City</div>
+        </div>
+        <ul class="bullets">
+          <li>Architected and built production Go microservices (<strong>9 services for COSMO8; 17 services + Node.js Revideo worker for RMN</strong>) backed by PostgreSQL 16, CockroachDB, Redis, and Apache Kafka (Azure Event Hubs).</li>
+          <li>Engineered multimodal AI &amp; RAG pipelines: integrated GPT-4o Vision/Text and Azure AI Search for <strong>sub-5s P95</strong> skin diagnostics &amp; grounded SKU curation (COSMO8), and built a multi-LLM/image failover gateway with automated 90s ad video rendering (RMN).</li>
+          <li>Designed SmartPOS Anti-Corruption Layers (5 adapters, HMAC webhooks, transactional outbox), real-time WebSocket Android TV multi-zone signage orchestration, and AES-256-GCM TOTP 2FA &amp; PASETO/Redis authentication.</li>
+          <li>Built multi-agent AI engineering harnesses (<code>.claude</code> / <code>.agents</code>) with automated cross-model code review gates, knowledge-graph indexing, RED-GREEN TDD workflows, and Kubernetes (AKS) + ArgoCD GitOps CI/CD.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <div class="entry-title-group">
+            <span class="entry-org">GiaPhuoc-Express</span> — <span class="entry-role">Freelance Backend Developer</span>
+          </div>
+          <div class="entry-meta">06/2025 – 03/2026 | Ho Chi Minh City</div>
+        </div>
+        <ul class="bullets">
+          <li>Engineered core backend services for a nationwide inter-station express freight and cash-remittance platform using Node.js 20, TypeScript (strict mode), Express.js, Zod, 4-tier JWT RBAC, and MongoDB (Mongoose).</li>
+          <li>Architected the automated daily inter-station debt reconciliation engine and PM2 cronjobs—enforcing Vietnam-to-UTC timezone boundaries, idempotent execution locks, atomic MongoDB <code>bulkWrite</code> transactions, and aggregation-based DebtReport &amp; accounting export APIs.</li>
+          <li>Built inbound/return parcel workflows, inter-branch cash and COD remittances, proof-of-delivery image upload pipelines (Multer), Zalo ZNS/SMS notifications, and Jest/Supertest integration tests deployed via GitHub Actions CI/CD.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <div class="entry-title-group">
+            <span class="entry-org">Link Technology Crossborder</span> — <span class="entry-role">Backend Developer</span>
+          </div>
+          <div class="entry-meta">04/2025 – 08/2025 | Ho Chi Minh City</div>
+        </div>
+        <ul class="bullets">
+          <li>Designed and built <strong>Pulse-SDMS</strong> from scratch using Golang (Gin) and MySQL—an internal deployment and release-version management system orchestrating servers across company projects.</li>
+          <li>Maintained and enhanced distributed microservices for the Pulseim enterprise messaging suite (<code>gateway-server</code>, <code>im-server</code>, <code>chat-server</code>), implementing revamped login flows, group-chat APIs, and merchant account management.</li>
+          <li>Resolved staging/dev deployment bottlenecks and maintained containerized infrastructure on AWS (EC2, S3) and Docker within a 15-member cross-border engineering team.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <div class="entry-title-group">
+            <span class="entry-org">Brickmate Group VN</span> — <span class="entry-role">Backend Developer</span>
+          </div>
+          <div class="entry-meta">07/2020 – 12/2024 | Ho Chi Minh City</div>
+        </div>
+        <ul class="bullets">
+          <li>Architected and delivered backend systems from inception to production for <strong>7 international products</strong> across IoT smart buildings (<em>Chocolat, Chocolat PC</em>), e-commerce logistics (<em>Busk</em>), EdTech (<em>Search Class</em>), media streaming (<em>OMN, Terafty</em>), and auto auctions (<em>SC Road</em>) using Node.js (NestJS, Express.js) and TypeScript.</li>
+          <li>Optimized data-retrieval queries and refactored backend architecture on the Busk logistics platform—<strong>reducing API response time by 20%</strong>—and integrated Shopee Open APIs for real-time order processing and multi-warehouse inventory sync.</li>
+          <li>Built real-time IoT device telemetry and remote-control backends for Kumho Electronic via Azure IoT Hub, Azure Blob Storage, SHA-512 payload encryption, and scheduled power-consumption aggregation cron jobs.</li>
+          <li>Implemented asynchronous RabbitMQ message queues, OAuth2 social logins (Google, KakaoTalk, Naver), relational/NoSQL schemas (MySQL/TypeORM, MongoDB, Firebase, Redis), and GitLab CI/CD pipelines on AWS and Azure.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <div class="entry-title-group">
+            <span class="entry-org">VHT Company (Virtual Hybrid Telecom)</span> — <span class="entry-role">Fullstack Developer</span>
+          </div>
+          <div class="entry-meta">11/2019 – 06/2020 | Ho Chi Minh City</div>
+        </div>
+        <ul class="bullets">
+          <li>Developed enterprise SIP Trunk hotline and telecom package management platforms for Viettel Group and Mobifone using React, PHP, MariaDB, Redis, Elasticsearch, and Docker.</li>
+          <li>Integrated directly with carrier billing servers for real-time subscription synchronization, automated monthly/annual package renewals, and high-volume telecom data processing.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <div class="entry-title-group">
+            <span class="entry-org">VHT Company (Virtual Hybrid Telecom)</span> — <span class="entry-role">Internship Developer</span>
+          </div>
+          <div class="entry-meta">07/2019 – 10/2019 | Ho Chi Minh City</div>
+        </div>
+        <ul class="bullets">
+          <li>Gained hands-on experience with production telecom infrastructure and distributed system patterns (microservices, MVC, Docker, HAProxy) and independently provisioned staging/test server environments in agile workflows.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- SELECTED FLAGSHIP PROJECTS -->
+    <section class="section">
+      <div class="section-title-row">
+        <h2 class="section-title">Selected Flagship Projects</h2>
+        <div class="portfolio-cta">
+          Full archive of all 13 production projects:
+          <a href="https://leonkenzo1997.github.io" target="_blank" rel="noopener">https://leonkenzo1997.github.io</a>
+        </div>
+      </div>
+
+      <article class="entry">
+        <div class="entry-header">
+          <div class="entry-title-group">
+            <span class="entry-org">1. COSMO8 — In-Store AI Skin Curator Platform</span>
+          </div>
+          <div class="entry-meta">07/2026 – Present | MTS Corporation VN</div>
+        </div>
+        <div class="entry-submeta">Go (Gin, GORM, Goose), GPT-4o Vision/Text, text-embedding-3-large, Azure AI Search, PostgreSQL 16, Redis, Kafka, AKS/ArgoCD</div>
+        <ul class="bullets">
+          <li>Built a 9-microservice Go monorepo (7 independent PostgreSQL DBs, Redis, Kafka) powering <strong>&lt; 5s P95</strong> 6-axis AI skin diagnostics, active-ingredient RAG grounding, deterministic Top-5 in-stock SKU scoring, and bilingual (KO/VI) advisor scripts.</li>
+          <li>Engineered a 5-adapter SmartPOS Anti-Corruption Layer (HMAC webhooks, transactional outbox, loyalty watermarks) and VN PDPD privacy-by-design compliance (anonymous sessions, zero facial-embedding storage, automated 24-month photo TTL).</li>
+          <li>Implemented opaque Redis session auth, AES-256-GCM encrypted TOTP 2FA with step-up enforcement, 5-role Portal RBAC, Twilio/Zalo OTP onboarding, and AKS + ArgoCD GitOps deployment.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <div class="entry-title-group">
+            <span class="entry-org">2. RMN — Retail Media Network Platform</span>
+          </div>
+          <div class="entry-meta">01/2026 – Present | MTS Corporation VN</div>
+        </div>
+        <div class="entry-submeta">Go 1.26 (Gin, GORM, Wire), Node.js 20, Revideo/FFmpeg, Gemini/OpenAI/Groq/FLUX, CockroachDB, Redis, Kafka, AKS/Helm</div>
+        <ul class="bullets">
+          <li>Developed core services across a 17-microservice Go ecosystem and an AI Studio multi-provider LLM/image failover gateway rendering up to 90s ad videos asynchronously via Revideo/FFmpeg and Azure Blob/CDN.</li>
+          <li>Engineered real-time WebSocket Android TV digital signage orchestration with multi-zone split-screen playlist resolution, parallel video playback, and Kafka-backed proof-of-play impression telemetry.</li>
+          <li>Built multi-tier GitHub Actions CI/CD (gateway route parity smoke tests, PostgreSQL 16 integration gates) and Helm pre-upgrade database migration pipelines across 13 DB services deployed via ArgoCD.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <div class="entry-title-group">
+            <span class="entry-org">3. GiaPhuoc-Express — Express Freight &amp; Debt Reconciliation</span>
+          </div>
+          <div class="entry-meta">06/2025 – 03/2026 | Gia Phuoc Express</div>
+        </div>
+        <div class="entry-submeta">Node.js 20, TypeScript (strict), Express.js, Zod, MongoDB (Mongoose), Multer, PM2, Jest/Supertest, GitHub Actions</div>
+        <ul class="bullets">
+          <li>Built an automated daily inter-station debt reconciliation engine (<code>fromRoute → toRoute</code> pairing, UTC/VN timezone boundary locks, idempotent CronLog execution, atomic MongoDB <code>bulkWrite</code> transactions) and accounting export APIs.</li>
+          <li>Implemented inbound/return parcel workflows, COD cash remittances, Multer proof-of-delivery image pipelines, Zalo ZNS/SMS alerts, 4-tier JWT RBAC, Swagger/OpenAPI docs, and Jest/Supertest integration testing.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-header">
+          <div class="entry-title-group">
+            <span class="entry-org">4. Busk Logistics &amp; Kumho Chocolat IoT Platforms</span>
+          </div>
+          <div class="entry-meta">07/2022 – 12/2024 | Brickmate Group VN</div>
+        </div>
+        <div class="entry-submeta">Node.js (NestJS), TypeScript, MySQL (TypeORM), Azure IoT Hub, Azure Blob Storage, AWS (EC2, S3), Docker, GitLab CI/CD</div>
+        <ul class="bullets">
+          <li>Refactored Busk's 4-portal warehouse &amp; seller logistics backend (<strong>cutting API latency by 20%</strong>) and integrated Shopee Open APIs for real-time order processing and multi-warehouse inventory synchronization.</li>
+          <li>Built Kumho Electronic's commercial building IoT telemetry &amp; remote-control backend via Azure IoT Hub, SHA-512 payload encryption, Azure Blob Storage, and scheduled weekly/monthly/annual power-consumption aggregation jobs.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- EDUCATION (AT THE BOTTOM) -->
+    <section class="section">
+      <h2 class="section-title">Education &amp; Certifications</h2>
+      <div class="edu-row">
+        <div>
+          <span class="edu-school">University of Greenwich (FPT Academy)</span> — <span class="edu-detail">Bachelor of Computer Science (Second Class Honours | Graduated)</span>
+        </div>
+        <div class="edu-date">10/2015 – 06/2020</div>
+      </div>
+      <div class="edu-row">
+        <div>
+          <span class="edu-school">Cybersoft Academy</span> — <span class="edu-detail">Certificates in Front-End Development (06/2019 – 12/2019) &amp; Java / OOP (03/2019 – 05/2019)</span>
+        </div>
+        <div class="edu-date">03/2019 – 12/2019</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
