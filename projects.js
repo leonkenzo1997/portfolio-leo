@@ -605,7 +605,51 @@ function renderProjects() {
     .join('');
 }
 
-function openProjectModal(projectId) {
+function copyTextToClipboard(text) {
+  if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(text).catch(() => fallbackCopyText(text));
+  }
+  return Promise.resolve(fallbackCopyText(text));
+}
+
+function fallbackCopyText(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.setAttribute('readonly', '');
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand('copy');
+  } finally {
+    document.body.removeChild(ta);
+  }
+}
+
+function triggerCopyFeedback(el, copiedLabel) {
+  if (!el) return;
+  if (!el.dataset.originalLabel) {
+    el.dataset.originalLabel = el.textContent.trim();
+  }
+  if (el._copyTimer) {
+    clearTimeout(el._copyTimer);
+  }
+  el.textContent = copiedLabel;
+  el.classList.add('copied');
+  el._copyTimer = setTimeout(() => {
+    el.textContent = el.dataset.originalLabel;
+    el.classList.remove('copied');
+    el._copyTimer = null;
+  }, 2000);
+}
+
+function getProjectDeepLink(projectId) {
+  const base = window.location.href.split('#')[0];
+  return `${base}#project=${encodeURIComponent(projectId)}`;
+}
+
+function openProjectModal(projectId, updateHash = true) {
   const project = PROJECTS.find((p) => p.id === projectId);
   if (!project) return;
 
@@ -666,7 +710,10 @@ function openProjectModal(projectId) {
         </div>
         ${renderImpactMetrics(project.metrics)}
       </div>
-      <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-sm" id="modalShareBtn">Copy Link</button>
+        <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      </div>
     </div>
 
     <div class="modal-section">
@@ -692,13 +739,35 @@ function openProjectModal(projectId) {
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
 
+  if (updateHash && typeof history !== 'undefined' && history.replaceState) {
+    history.replaceState(null, '', '#project=' + encodeURIComponent(project.id));
+  }
+
   document.getElementById('modalCloseBtn').addEventListener('click', closeProjectModal);
+  const shareBtn = document.getElementById('modalShareBtn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', () => {
+      copyTextToClipboard(getProjectDeepLink(project.id)).then(() => {
+        triggerCopyFeedback(shareBtn, '✓ Link Copied');
+      });
+    });
+  }
 }
 
 function closeProjectModal() {
   const modal = document.getElementById('projectModal');
   modal.classList.remove('open');
-  document.body.style.overflow = '';
+  if (!document.getElementById('cmdModal')?.classList.contains('open')) {
+    document.body.style.overflow = '';
+  }
+  if (
+    window.location.hash &&
+    window.location.hash.startsWith('#project=') &&
+    typeof history !== 'undefined' &&
+    history.replaceState
+  ) {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
 }
 
 function resetAllFilters() {
@@ -714,9 +783,238 @@ function resetAllFilters() {
   renderProjects();
 }
 
+function getCommandItems() {
+  const actions = [
+    {
+      id: 'download-cv',
+      group: 'Quick Actions',
+      title: 'Download CV (PDF)',
+      sub: 'Truong-Tang-Quang-CV.pdf',
+      hint: 'PDF',
+      keywords: 'download cv resume pdf',
+      run: () => {
+        const a = document.createElement('a');
+        a.href = './Truong-Tang-Quang-CV.pdf';
+        a.download = 'Truong-Tang-Quang-CV.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+    },
+    {
+      id: 'copy-email',
+      group: 'Quick Actions',
+      title: 'Copy Email Address',
+      sub: 'truongtangquang1997@gmail.com',
+      hint: 'Copy',
+      keywords: 'copy email contact mail truongtangquang1997',
+      run: () => {
+        const email = 'truongtangquang1997@gmail.com';
+        copyTextToClipboard(email).then(() => {
+          document.querySelectorAll('[data-copy-email]').forEach((el) => {
+            triggerCopyFeedback(el, `✓ Copied: ${email}`);
+          });
+        });
+      }
+    },
+    {
+      id: 'web-cv',
+      group: 'Quick Actions',
+      title: 'View Print-Ready Web CV',
+      sub: 'Open ATS-friendly HTML resume',
+      hint: 'Page',
+      keywords: 'web cv html print resume ats',
+      run: () => {
+        window.location.href = './cv.html';
+      }
+    },
+    {
+      id: 'open-github',
+      group: 'Quick Actions',
+      title: 'Open GitHub (@leonkenzo1997)',
+      sub: 'github.com/leonkenzo1997',
+      hint: 'Link',
+      keywords: 'github code repositories profile',
+      run: () => {
+        window.open('https://github.com/leonkenzo1997', '_blank', 'noopener');
+      }
+    },
+    {
+      id: 'open-linkedin',
+      group: 'Quick Actions',
+      title: 'Open LinkedIn Profile',
+      sub: 'linkedin.com/in/quang-truong-tang-1ba617157',
+      hint: 'Link',
+      keywords: 'linkedin profile career network',
+      run: () => {
+        window.open('https://www.linkedin.com/in/quang-truong-tang-1ba617157/', '_blank', 'noopener');
+      }
+    },
+    {
+      id: 'jump-skills',
+      group: 'Quick Actions',
+      title: 'Jump to Technical Skills',
+      sub: '6 Engineering & AI Domains',
+      hint: '#skills',
+      keywords: 'section skills tech stack ai backend cloud',
+      run: () => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })
+    },
+    {
+      id: 'jump-experience',
+      group: 'Quick Actions',
+      title: 'Jump to Work Experience',
+      sub: '6 Roles (2019 – Present)',
+      hint: '#experience',
+      keywords: 'section work experience career mts brickmate vht',
+      run: () => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })
+    }
+  ];
+
+  const projectItems = PROJECTS.map((p) => ({
+    id: `project-${p.id}`,
+    group: 'Projects (13)',
+    title: p.title,
+    sub: `${p.categoryLabel} • ${(p.metrics || []).slice(0, 2).join(' • ')}`,
+    hint: 'Open',
+    keywords: [
+      p.title,
+      p.customer,
+      p.role,
+      p.categoryLabel,
+      ...(p.metrics || []),
+      ...getAllTags(p)
+    ]
+      .join(' ')
+      .toLowerCase(),
+    run: () => openProjectModal(p.id)
+  }));
+
+  return [...actions, ...projectItems];
+}
+
+const cmdState = {
+  items: [],
+  activeIndex: 0
+};
+
+function renderCmdList(query = '') {
+  const listEl = document.getElementById('cmdList');
+  if (!listEl) return;
+
+  const q = query.trim().toLowerCase();
+  const all = getCommandItems();
+  cmdState.items = q
+    ? all.filter(
+        (item) =>
+          item.title.toLowerCase().includes(q) ||
+          item.sub.toLowerCase().includes(q) ||
+          item.keywords.includes(q)
+      )
+    : all;
+
+  if (cmdState.items.length === 0) {
+    cmdState.activeIndex = 0;
+    listEl.innerHTML = '<div class="cmd-empty">No matching commands or projects.</div>';
+    return;
+  }
+
+  if (cmdState.activeIndex >= cmdState.items.length) {
+    cmdState.activeIndex = 0;
+  }
+
+  let html = '';
+  let lastGroup = '';
+  cmdState.items.forEach((item, idx) => {
+    if (item.group !== lastGroup) {
+      html += `<div class="cmd-group-label">${escapeHtml(item.group)}</div>`;
+      lastGroup = item.group;
+    }
+    const activeCls = idx === cmdState.activeIndex ? 'active' : '';
+    html += `
+      <button type="button" class="cmd-item ${activeCls}" role="option" aria-selected="${idx === cmdState.activeIndex}" data-cmd-index="${idx}">
+        <div>
+          <div class="cmd-item-title">${escapeHtml(item.title)}</div>
+          <div class="cmd-item-sub">${escapeHtml(item.sub)}</div>
+        </div>
+        <span class="kbd-hint">${escapeHtml(item.hint)}</span>
+      </button>
+    `;
+  });
+
+  listEl.innerHTML = html;
+}
+
+function updateCmdActiveItem() {
+  const buttons = document.querySelectorAll('#cmdList .cmd-item[data-cmd-index]');
+  buttons.forEach((btn) => {
+    const idx = Number(btn.dataset.cmdIndex);
+    const isActive = idx === cmdState.activeIndex;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-selected', String(isActive));
+    if (isActive && btn.scrollIntoView) {
+      btn.scrollIntoView({ block: 'nearest' });
+    }
+  });
+}
+
+function openCmdModal() {
+  const cmdModal = document.getElementById('cmdModal');
+  const cmdInput = document.getElementById('cmdInput');
+  if (!cmdModal || !cmdInput) return;
+
+  cmdState.activeIndex = 0;
+  cmdInput.value = '';
+  renderCmdList('');
+  cmdModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => cmdInput.focus(), 0);
+}
+
+function closeCmdModal() {
+  const cmdModal = document.getElementById('cmdModal');
+  if (!cmdModal) return;
+  cmdModal.classList.remove('open');
+  if (!document.getElementById('projectModal')?.classList.contains('open')) {
+    document.body.style.overflow = '';
+  }
+}
+
+function executeCmdItem(index) {
+  const item = cmdState.items[index];
+  if (!item) return;
+  closeCmdModal();
+  item.run();
+}
+
+function handleProjectHash() {
+  const hash = window.location.hash || '';
+  if (hash.startsWith('#project=')) {
+    const id = decodeURIComponent(hash.slice('#project='.length));
+    if (PROJECTS.some((p) => p.id === id)) {
+      openProjectModal(id, false);
+    }
+  } else if (document.getElementById('projectModal')?.classList.contains('open')) {
+    closeProjectModal();
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderQuickTechs();
   renderProjects();
+  handleProjectHash();
+  window.addEventListener('hashchange', handleProjectHash);
+
+  // One-click copy email
+  document.querySelectorAll('[data-copy-email]').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = el.dataset.copyEmail;
+      if (!email) return;
+      copyTextToClipboard(email).then(() => {
+        triggerCopyFeedback(el, `✓ Copied: ${email}`);
+      });
+    });
+  });
 
   // Category filter pills
   document.getElementById('categoryPills').addEventListener('click', (e) => {
@@ -784,12 +1082,81 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Modal backdrop + ESC key
+  // Command palette (Cmd/Ctrl + K)
+  const cmdTriggerBtn = document.getElementById('cmdTriggerBtn');
+  const cmdModal = document.getElementById('cmdModal');
+  const cmdInput = document.getElementById('cmdInput');
+  const cmdList = document.getElementById('cmdList');
+
+  if (cmdTriggerBtn) {
+    cmdTriggerBtn.addEventListener('click', openCmdModal);
+  }
+  if (cmdModal) {
+    cmdModal.addEventListener('click', (e) => {
+      if (e.target === cmdModal) closeCmdModal();
+    });
+  }
+  if (cmdInput) {
+    cmdInput.addEventListener('input', (e) => {
+      cmdState.activeIndex = 0;
+      renderCmdList(e.target.value);
+    });
+  }
+  if (cmdList) {
+    cmdList.addEventListener('click', (e) => {
+      const itemBtn = e.target.closest('.cmd-item[data-cmd-index]');
+      if (itemBtn) executeCmdItem(Number(itemBtn.dataset.cmdIndex));
+    });
+    cmdList.addEventListener('mousemove', (e) => {
+      const itemBtn = e.target.closest('.cmd-item[data-cmd-index]');
+      if (!itemBtn) return;
+      const idx = Number(itemBtn.dataset.cmdIndex);
+      if (idx !== cmdState.activeIndex) {
+        cmdState.activeIndex = idx;
+        updateCmdActiveItem();
+      }
+    });
+  }
+
+  // Modal backdrop + keyboard shortcuts
   const modal = document.getElementById('projectModal');
   modal.addEventListener('click', (e) => {
     if (e.target === modal) closeProjectModal();
   });
   document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (cmdModal && cmdModal.classList.contains('open')) {
+        closeCmdModal();
+      } else {
+        openCmdModal();
+      }
+      return;
+    }
+
+    if (cmdModal && cmdModal.classList.contains('open')) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeCmdModal();
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (cmdState.items.length > 0) {
+          cmdState.activeIndex = (cmdState.activeIndex + 1) % cmdState.items.length;
+          updateCmdActiveItem();
+        }
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (cmdState.items.length > 0) {
+          cmdState.activeIndex = (cmdState.activeIndex - 1 + cmdState.items.length) % cmdState.items.length;
+          updateCmdActiveItem();
+        }
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        executeCmdItem(cmdState.activeIndex);
+      }
+      return;
+    }
+
     if (e.key === 'Escape' && modal.classList.contains('open')) {
       closeProjectModal();
     }

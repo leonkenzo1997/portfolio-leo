@@ -8,6 +8,21 @@
     name="description"
     content="Portfolio and 13 production software architectures by Truong Tang Quang (Leo) — Senior Backend & Fullstack Software Engineer (Golang, Node.js, React, Flutter) advancing toward AI-Native Engineering."
   />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Truong Tang Quang (Leo) — Senior Backend, Fullstack &amp; AI-Native Software Engineer" />
+  <meta
+    property="og:description"
+    content="Portfolio and 13 production software architectures across Golang, Node.js/NestJS, React, Flutter, and AI-Native Engineering."
+  />
+  <meta property="og:url" content="https://leonkenzo1997.github.io/portfolio-leo/" />
+  <meta property="og:image" content="https://leonkenzo1997.github.io/portfolio-leo/avatar.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Truong Tang Quang (Leo) — Senior Backend, Fullstack &amp; AI-Native Software Engineer" />
+  <meta
+    name="twitter:description"
+    content="Portfolio and 13 production software architectures across Golang, Node.js/NestJS, React, Flutter, and AI-Native Engineering."
+  />
+  <meta name="twitter:image" content="https://leonkenzo1997.github.io/portfolio-leo/avatar.jpg" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -27,6 +42,10 @@
       </nav>
 
       <div class="nav-actions">
+        <button type="button" id="cmdTriggerBtn" class="btn btn-sm cmd-trigger" aria-label="Open quick command menu">
+          <span>Quick Jump</span>
+          <kbd class="kbd-hint">&#8984;K</kbd>
+        </button>
         <a href="./cv.html" class="btn btn-sm">Web CV</a>
         <a href="./Truong-Tang-Quang-CV.pdf" download="Truong-Tang-Quang-CV.pdf" class="btn btn-sm btn-primary">
           Download CV
@@ -71,7 +90,7 @@
           <a href="https://www.linkedin.com/in/quang-truong-tang-1ba617157/" target="_blank" rel="noopener" class="btn">
             LinkedIn
           </a>
-          <a href="mailto:truongtangquang1997@gmail.com" class="btn">
+          <a href="mailto:truongtangquang1997@gmail.com" class="btn" data-copy-email="truongtangquang1997@gmail.com" title="Click to copy email">
             truongtangquang1997@gmail.com
           </a>
         </div>
@@ -309,7 +328,7 @@
         <strong>Truong Tang Quang (Leo)</strong> &bull; Ho Chi Minh City, Vietnam &bull; +84 799 759 531
       </div>
       <div class="footer-links">
-        <a href="mailto:truongtangquang1997@gmail.com">truongtangquang1997@gmail.com</a>
+        <a href="mailto:truongtangquang1997@gmail.com" data-copy-email="truongtangquang1997@gmail.com" title="Click to copy email">truongtangquang1997@gmail.com</a>
         <a href="https://github.com/leonkenzo1997" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/quang-truong-tang-1ba617157/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="./Truong-Tang-Quang-CV.pdf" download="Truong-Tang-Quang-CV.pdf">Download CV</a>
@@ -320,6 +339,24 @@
   <!-- PROJECT DETAIL MODAL -->
   <div id="projectModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Project architecture details">
     <div class="modal-dialog" id="modalBody"></div>
+  </div>
+
+  <!-- COMMAND PALETTE MODAL (CMD+K) -->
+  <div id="cmdModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Quick command palette">
+    <div class="cmd-dialog">
+      <div class="cmd-input-wrap">
+        <input
+          type="search"
+          id="cmdInput"
+          class="cmd-input"
+          placeholder="Type a project, tech stack (Go, Kafka, RAG...), or action..."
+          autocomplete="off"
+          aria-label="Search commands and projects"
+        />
+        <kbd class="kbd-hint">ESC</kbd>
+      </div>
+      <div id="cmdList" class="cmd-list" role="listbox"></div>
+    </div>
   </div>
 
   <script src="./projects.js"></script>
