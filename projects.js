@@ -24,6 +24,14 @@ const PROJECTS = [
       'Data & Events': ['PostgreSQL 16', 'Redis', 'Apache Kafka', 'Azure Event Hubs'],
       'Cloud & Web': ['Microsoft Azure', 'Kubernetes', 'ArgoCD', 'Helm', 'Docker', 'GitHub Actions', 'Flutter Web', 'Three.js']
     },
+    metrics: ['< 5s P95 AI Latency', '9 Go Microservices', '5 SmartPOS Adapters'],
+    archFlow: [
+      { title: '4 Client Apps', sub: 'Tablet • App • Admin • 3D' },
+      { title: 'Go API Gateway', sub: 'Redis Auth • TOTP 2FA' },
+      { title: 'AI Skin & RAG Pipeline', sub: 'GPT-4o Vision + AI Search' },
+      { title: '9 Go Services + ACL', sub: 'Top-5 Scorer • 5 POS Adapters' },
+      { title: 'Data & Event Mesh', sub: '7× PostgreSQL 16 • Redis • Kafka' }
+    ],
     quickTags: ['Golang', 'LLM / RAG', 'PostgreSQL', 'Kafka', 'Kubernetes', 'Azure']
   },
   {
@@ -51,6 +59,14 @@ const PROJECTS = [
       'Data & Events': ['CockroachDB', 'PostgreSQL 16', 'Redis', 'Apache Kafka', 'Azure Event Hubs'],
       'Cloud & TV': ['Microsoft Azure', 'AWS', 'Kubernetes', 'ArgoCD', 'Helm', 'Docker', 'Grafana', 'Loki', 'Flutter Web', 'Android TV']
     },
+    metrics: ['17 Go Microservices', '90s AI Ad Rendering', '24/7 Android TV Signage'],
+    archFlow: [
+      { title: '4 Portals & Android TV', sub: 'Flutter Web • TV Player' },
+      { title: 'Go 1.26 API Gateway', sub: 'PASETO/JWT • Route Parity' },
+      { title: '17 Go Microservices', sub: 'Campaign • CMS • Device WS' },
+      { title: 'AI Studio & Failover', sub: 'Gemini/OpenAI/FLUX • Revideo' },
+      { title: 'Distributed Storage', sub: 'CockroachDB • Redis • Kafka' }
+    ],
     quickTags: ['Golang', 'Node.js / NestJS', 'LLM / RAG', 'PostgreSQL', 'Kafka', 'Kubernetes', 'Azure']
   },
   {
@@ -77,6 +93,14 @@ const PROJECTS = [
       'Data & Testing': ['MongoDB', 'Mongoose', 'Jest', 'Supertest', 'mongodb-memory-server', 'Swagger / OpenAPI'],
       'Infra & Integrations': ['PM2', 'GitHub Actions', 'Linux VPS', 'Zalo ZNS & SMS', 'ReactJS']
     },
+    metrics: ['Daily Auto Debt Engine', 'Atomic bulkWrite Locks', '4-Tier JWT RBAC'],
+    archFlow: [
+      { title: 'Station Web Portal', sub: 'ReactJS • 4-Tier RBAC' },
+      { title: 'Express.js + TS API', sub: 'Strict Mode • Zod Validation' },
+      { title: 'Parcel & Debt Engine', sub: 'PM2 Cron • UTC/VN Lock' },
+      { title: 'MongoDB + Multer', sub: 'Atomic bulkWrite • POD Images' },
+      { title: 'External Alerts', sub: 'Zalo ZNS • SMS • QR Bank' }
+    ],
     quickTags: ['Node.js / NestJS', 'TypeScript', 'MongoDB', 'GitHub Actions']
   },
   {
@@ -102,6 +126,14 @@ const PROJECTS = [
       Data: ['MySQL', 'MongoDB'],
       'Cloud & Clients': ['AWS (EC2, S3)', 'Docker', 'React', 'Flutter', 'Electron Vue']
     },
+    metrics: ['Pulse-SDMS in Golang', '3 Chat Microservices', '5 Client Platforms'],
+    archFlow: [
+      { title: '5 Enterprise Clients', sub: 'Web • Mobile • Electron PC' },
+      { title: 'Gateway Server', sub: 'Auth & Session Routing' },
+      { title: 'IM & Chat Servers', sub: 'Group Chat • Merchant APIs' },
+      { title: 'Pulse-SDMS (Go/Gin)', sub: 'Release & Server Orchestration' },
+      { title: 'Data & Cloud Infra', sub: 'MySQL • MongoDB • AWS EC2/S3' }
+    ],
     quickTags: ['Golang', 'MySQL', 'MongoDB', 'AWS', 'Docker']
   },
   {
@@ -127,6 +159,14 @@ const PROJECTS = [
       Database: ['MySQL'],
       'Cloud & Integrations': ['Shopee Open API v2', 'AWS (EC2, S3, SQS)', 'PayPal', 'ExcelJS', 'Node-Geocoder', 'Docker', 'Nginx', 'GitLab CI/CD', 'ReactJS']
     },
+    metrics: ['-20% API Latency', 'Shopee OpenAPI v2', '4-Portal 3PL Suite'],
+    archFlow: [
+      { title: '4 Fulfillment Portals', sub: 'Admin • Warehouse • Seller • User' },
+      { title: 'NestJS 9 Backend', sub: 'TypeORM • Refactored Queries' },
+      { title: 'ShopeeService ACL', sub: 'HMAC-SHA256 • OAuth • Webhooks' },
+      { title: 'Order & PDF Pipeline', sub: 'AWS SQS • Airway Bill PDF' },
+      { title: 'MySQL & AWS S3', sub: 'Multi-Warehouse Inventory' }
+    ],
     quickTags: ['Node.js / NestJS', 'TypeScript', 'MySQL', 'AWS', 'Docker']
   },
   {
@@ -152,6 +192,14 @@ const PROJECTS = [
       'Database & Cache': ['MySQL', 'Redis'],
       'Cloud & Services': ['AWS (EC2, S3 Presigned Post, RDS)', 'Firebase Admin (FCM & Auth)', 'Kakao/Naver/Google/Apple OAuth2', 'ExcelJS', 'Docker', 'GitLab CI/CD', 'ReactJS']
     },
+    metrics: ['25+ NestJS Modules', '5-Provider OAuth2/SNS', 'Geospatial Course Search'],
+    archFlow: [
+      { title: 'Admin & User Web Apps', sub: 'ReactJS • Grades 1–12' },
+      { title: '5-Provider OAuth2 Guard', sub: 'Kakao • Naver • Google • Apple' },
+      { title: 'NestJS 9 (25+ Modules)', sub: 'Geospatial Search • i18n' },
+      { title: 'MySQL & Redis Cache', sub: 'TypeORM • Low-Latency Queries' },
+      { title: 'AWS S3 & Firebase FCM', sub: 'Presigned Uploads • Push Alerts' }
+    ],
     quickTags: ['Node.js / NestJS', 'TypeScript', 'MySQL', 'Redis', 'AWS', 'Docker']
   },
   {
@@ -177,6 +225,14 @@ const PROJECTS = [
       'Database & Cache': ['MySQL', 'Redis (ioredis)'],
       'Cloud, IoT & Desktop': ['Microsoft Azure (VM, IoT Hub, Event Hubs AMQP, Blob Storage)', 'New Relic APM', 'Docker', 'GitLab CI/CD', 'Electron', 'ReactJS', 'Ant Design']
     },
+    metrics: ['AES-256-CBC + SHA-512', 'Real-Time AMQP IoT', '2D Floor-Plan Control'],
+    archFlow: [
+      { title: 'Electron PC & Web', sub: '2D Floor-Plan Zone UI' },
+      { title: 'NestJS 9 BEMS API', sub: 'AES-256-CBC • SHA-512 Auth' },
+      { title: 'Azure IoT Hub + AMQP', sub: 'Event Hubs Telemetry Consumer' },
+      { title: 'Smart Mesh Gateways', sub: 'Lights • Switches • Sensors • OTA' },
+      { title: 'MySQL, Redis & Blob', sub: 'Zone State • Floor Plans' }
+    ],
     quickTags: ['Node.js / NestJS', 'TypeScript', 'MySQL', 'Redis', 'Azure', 'Docker']
   },
   {
@@ -202,6 +258,14 @@ const PROJECTS = [
       'Database & Cache': ['MySQL', 'Redis (ioredis)'],
       'Cloud, IoT & Clients': ['Microsoft Azure (VM, IoT Hub, Event Hubs, Blob Storage)', 'New Relic', 'Docker', 'GitLab CI/CD', 'Kotlin (Android BLE)', 'ReactJS']
     },
+    metrics: ['440+ Backend Commits', 'Automated BEMS Energy Cron', 'BLE Mesh + OTA (.gbl)'],
+    archFlow: [
+      { title: 'Android BLE & Admin Web', sub: 'Mesh Commissioning • Portal' },
+      { title: 'NestJS 9 Core Backend', sub: 'Scenes • Groups • KR/EN i18n' },
+      { title: 'Energy Calc Engine', sub: '@nestjs/schedule Power Cron' },
+      { title: 'Azure IoT Hub & Blob', sub: 'Device Twin • .gbl OTA Firmware' },
+      { title: 'MySQL & Redis Cache', sub: 'Weekly/Monthly/Annual BEMS' }
+    ],
     quickTags: ['Node.js / NestJS', 'TypeScript', 'MySQL', 'Redis', 'Azure', 'Docker']
   },
   {
@@ -226,6 +290,13 @@ const PROJECTS = [
       Database: ['MongoDB', 'Mongoose'],
       'Cloud & Web': ['AWS (EC2, S3)', 'Google & Kakao OAuth2', 'Nodemailer', 'Docker', 'GitLab', 'ReactJS', 'Ant Design']
     },
+    metrics: ['220+ Backend Commits', 'Crowdfunding & Voting', 'KR/EN i18n APIs'],
+    archFlow: [
+      { title: 'User App & Admin Portal', sub: 'ReactJS • Ant Design' },
+      { title: 'Express.js + TS API', sub: 'Google/Kakao OAuth2 • JWT' },
+      { title: 'Streaming & Funding Core', sub: 'Episode Voting • Rankings' },
+      { title: 'MongoDB & AWS S3', sub: 'Mongoose Pipelines • Media' }
+    ],
     quickTags: ['Node.js / NestJS', 'TypeScript', 'MongoDB', 'AWS', 'Docker']
   },
   {
@@ -251,6 +322,14 @@ const PROJECTS = [
       Databases: ['MongoDB (Mongoose, mongoose-queue)', 'MySQL (Sequelize)', 'Redis'],
       'Cloud & Media': ['AWS (Elemental MediaConvert DRM DASH/HLS, S3, EC2)', 'Sharp', 'Jimp', 'In-App Purchase', 'Firebase Admin & APNs', 'Docker', 'Angular', 'iOS & Android']
     },
+    metrics: ['380+ Backend Commits', 'DRM DASH/HLS Transcoding', '5 Multi-Platform API Suites'],
+    archFlow: [
+      { title: 'Web, Creator & Mobile', sub: 'Online • Offline • iOS/Android' },
+      { title: '5 Express.js API Suites', sub: 'Socket.IO • FCM & APNs Push' },
+      { title: 'AWS MediaConvert DRM', sub: 'Master Video → DASH & HLS' },
+      { title: 'Queue & Billing Workers', sub: 'mongoose-queue • IAP Settlement' },
+      { title: 'MongoDB, MySQL & Redis', sub: 'AWS S3 • Sharp/Jimp Posters' }
+    ],
     quickTags: ['Node.js / NestJS', 'MongoDB', 'MySQL', 'Redis', 'AWS', 'Docker']
   },
   {
@@ -274,6 +353,13 @@ const PROJECTS = [
       Data: ['Firebase'],
       'Cloud & Web': ['AWS (EC2, S3)', 'GitLab', 'Ionic Angular']
     },
+    metrics: ['Sole Backend Engineer', 'Real-Time Dealer Bidding', '3 Auction Apps'],
+    archFlow: [
+      { title: '3 Ionic Angular Apps', sub: 'Dealer • Seller • Admin' },
+      { title: 'Express.js MVC Backend', sub: 'Bidding & Listing APIs' },
+      { title: 'Firebase Real-Time DB', sub: 'Live Auction Sync' },
+      { title: 'AWS EC2 & S3', sub: 'Vehicle Media & Hosting' }
+    ],
     quickTags: ['Node.js / NestJS', 'AWS']
   },
   {
@@ -298,6 +384,13 @@ const PROJECTS = [
       Data: ['MariaDB', 'Redis', 'Elasticsearch'],
       'Frontend & Infra': ['React', 'Docker', 'Bitbucket']
     },
+    metrics: ['Real-Time Carrier Billing', 'Auto Package Renewals', 'High-Volume SIP Data'],
+    archFlow: [
+      { title: 'Enterprise SMB Portal', sub: 'React • Hotline & Extensions' },
+      { title: 'PHP Backend Services', sub: 'Subscription & Cron Renewals' },
+      { title: 'Viettel Billing Servers', sub: 'Real-Time Carrier Sync' },
+      { title: 'MariaDB, Redis & ES', sub: 'High-Volume Telecom Search' }
+    ],
     quickTags: ['MySQL', 'Redis', 'Docker']
   },
   {
@@ -322,6 +415,13 @@ const PROJECTS = [
       Data: ['MariaDB', 'Redis', 'Elasticsearch'],
       'Frontend & Infra': ['React', 'Docker', 'Bitbucket']
     },
+    metrics: ['Carrier Billing Sync', 'Automated Renewal Cron', 'Enterprise SIP Trunking'],
+    archFlow: [
+      { title: 'SMB Telecom Portal', sub: 'React • Number Provisioning' },
+      { title: 'PHP Core Backend', sub: 'Package Lifecycle & Cron' },
+      { title: 'Mobifone Billing Gateway', sub: 'Real-Time Subscription Sync' },
+      { title: 'MariaDB, Redis & ES', sub: 'Fast Indexing & Caching' }
+    ],
     quickTags: ['MySQL', 'Redis', 'Docker']
   }
 ];
@@ -361,6 +461,13 @@ function getAllTags(project) {
   return Object.values(project.techGroups).flat();
 }
 
+function renderImpactMetrics(metrics) {
+  if (!metrics || metrics.length === 0) return '';
+  return `<div class="impact-metrics">${metrics
+    .map((m) => `<span class="impact-chip">${escapeHtml(m)}</span>`)
+    .join('')}</div>`;
+}
+
 function matchesFilters(project) {
   if (state.category !== 'all' && project.category !== state.category) {
     return false;
@@ -381,6 +488,7 @@ function matchesFilters(project) {
       project.role,
       project.summary,
       project.categoryLabel,
+      ...(project.metrics || []),
       ...project.highlights,
       ...getAllTags(project)
     ]
@@ -464,6 +572,7 @@ function renderProjects() {
               <span><strong>Client:</strong> ${escapeHtml(p.customer)}</span>
               <span><strong>Role:</strong> ${escapeHtml(p.role)}</span>
             </div>
+            ${renderImpactMetrics(p.metrics)}
           </div>
 
           <p class="project-summary">${escapeHtml(p.summary)}</p>
@@ -518,6 +627,29 @@ function openProjectModal(projectId) {
     )
     .join('');
 
+  const archFlowHtml =
+    project.archFlow && project.archFlow.length > 0
+      ? `
+    <div class="modal-section">
+      <h4>System Architecture Flow</h4>
+      <div class="arch-flow" role="list">
+        ${project.archFlow
+          .map(
+            (step, idx) => `
+          <div class="arch-node" role="listitem">
+            <div class="arch-step-num">0${idx + 1}</div>
+            <div class="arch-node-title">${escapeHtml(step.title)}</div>
+            <div class="arch-node-sub">${escapeHtml(step.sub)}</div>
+          </div>
+          ${idx < project.archFlow.length - 1 ? '<div class="arch-arrow" aria-hidden="true">&rarr;</div>' : ''}
+        `
+          )
+          .join('')}
+      </div>
+    </div>
+  `
+      : '';
+
   body.innerHTML = `
     <div class="modal-header">
       <div>
@@ -532,6 +664,7 @@ function openProjectModal(projectId) {
           <span><strong>Position:</strong> ${escapeHtml(project.role)}</span>
           <span><strong>Team Size:</strong> ${escapeHtml(project.teamSize)}</span>
         </div>
+        ${renderImpactMetrics(project.metrics)}
       </div>
       <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
     </div>
@@ -540,6 +673,8 @@ function openProjectModal(projectId) {
       <h4>System Overview</h4>
       <p style="font-size: 14.2px; color: #cbd5e1; line-height: 1.65;">${escapeHtml(project.summary)}</p>
     </div>
+
+    ${archFlowHtml}
 
     <div class="modal-section">
       <h4>Architecture &amp; Engineering Contributions</h4>
