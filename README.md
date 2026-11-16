@@ -1,6 +1,6 @@
 # Truong Tang Quang (Leo) — Engineering Portfolio & 2-Page CV
 
-Live Portfolio: **https://leonkenzo1997.github.io**
+Live Portfolio: **https://leonkenzo1997.github.io/portfolio-leo**
 
 ## Overview
 - **Interactive Portfolio (`index.html`)**: Filterable showcase of all **13 production projects** across AI & Retail Tech, Logistics & Supply Chain, Enterprise & IoT, Media/EdTech/Marketplace, and Telecom & Carrier Billing.
