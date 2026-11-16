@@ -106,7 +106,7 @@ const PROJECTS = [
   },
   {
     id: 'busk',
-    title: 'Busk — E-Commerce & Warehouse Logistics Platform',
+    title: 'Busk — Cross-Border 3PL E-Commerce Fulfillment',
     period: '08/2024 – 12/2024',
     customer: 'Busk Client (Korea)',
     role: 'Backend Developer',
@@ -115,16 +115,17 @@ const PROJECTS = [
     categoryLabel: 'Logistics & Supply Chain',
     flagship: true,
     summary:
-      '4-application logistics management platform (Admin, Warehouse, Seller, User) for a Korean logistics operator, enabling warehouse-seller import negotiations, stock tracking, and real-time Shopee marketplace order & inventory synchronization.',
+      'A 4-portal cross-border 3PL e-commerce fulfillment platform (Admin, Warehouse, Seller, and User portals) enabling sellers to connect marketplace stores, sync multi-warehouse inventory, negotiate import/storage requests, and automate order fulfillment.',
     highlights: [
-      'Refactored backend modules and relational data flows using NestJS and MySQL (TypeORM) to match evolving logistics specifications.',
-      'Optimized high-traffic database retrieval queries and indexing strategies, reducing overall API response latency by 20%.',
-      'Integrated Shopee Open APIs end-to-end—processing real-time order placement and cancellation webhooks while maintaining multi-warehouse inventory synchronization.'
+      'Refactored complex warehouse inventory, import-request, and settlement queries in NestJS 9 / TypeORM, reducing API response time by 20%.',
+      'Engineered the Shopee Open Platform v2 integration (ShopeeService): HMAC-SHA256 partner request signing, OAuth shop authorization & token refresh, and multi-shop account linking.',
+      'Built real-time Shopee order synchronization, canceled/returned order warehouse state handling, shipping document & airway-bill PDF generation, and invoice extraction APIs.',
+      'Integrated AWS S3 file storage, AWS SQS asynchronous queues, PayPal payments, ExcelJS reporting, Node-Geocoder, and Swagger/OpenAPI documentation.'
     ],
     techGroups: {
-      Backend: ['Node.js', 'NestJS', 'TypeScript', 'Shopee Open API'],
-      Data: ['MySQL', 'TypeORM'],
-      'Cloud & Web': ['AWS (EC2, S3)', 'Docker', 'GitLab CI/CD', 'React']
+      Backend: ['Node.js', 'TypeScript', 'NestJS 9', 'TypeORM', 'Swagger / OpenAPI'],
+      Database: ['MySQL'],
+      'Cloud & Integrations': ['Shopee Open API v2', 'AWS (EC2, S3, SQS)', 'PayPal', 'ExcelJS', 'Node-Geocoder', 'Docker', 'Nginx', 'GitLab CI/CD', 'ReactJS']
     },
     quickTags: ['Node.js / NestJS', 'TypeScript', 'MySQL', 'AWS', 'Docker']
   },
@@ -132,122 +133,125 @@ const PROJECTS = [
     id: 'search-class',
     title: 'Search Class — K-12 EdTech Platform',
     period: '11/2023 – 06/2024',
-    customer: '91do (91do.co.kr)',
+    customer: '91do (https://www.91do.co.kr/)',
     role: 'Backend Developer',
     teamSize: '9 (1 KR PM, 1 Tech Lead, 1 Tester, 4 FE, 2 BE)',
     category: 'media-edtech',
     categoryLabel: 'Media, EdTech & Marketplace',
     flagship: false,
     summary:
-      'Comprehensive K-12 education management platform spanning 3 React web applications (Landing Page, Student Web App, and Admin Portal) for course distribution, student learning workflows, and curriculum administration.',
+      'A K-12 education management and course discovery platform (Admin Portal, User Web App, and Landing Page) connecting students and parents with academies, lecturers, and grade-specific curricula (Grades 1–12) in Korea.',
     highlights: [
-      'Architected the NestJS backend repository structure from inception and designed MySQL (TypeORM) schemas based on client UX/UI wireframes.',
-      'Developed RESTful APIs and CRUD workflows enabling seamless data synchronization across Landing, Student, and Admin portals.',
-      'Implemented OAuth2 social login integrations for KakaoTalk, Google, and Naver accounts.',
-      'Configured GitLab CI/CD deployment pipelines targeting Docker containers on AWS (EC2, S3, RDS) and Linux servers.'
+      'Architected the NestJS 9 & TypeORM backend from inception across 25+ modules (academies, courses, grades, subjects, lecturers, inquiries, banners, notices, reactions, and FAQ).',
+      'Built unified 5-provider OAuth2 / SNS authentication (Kakao, Naver, Google, Apple JWKS, and Facebook via Firebase Auth) with JWT/Passport role guards.',
+      'Implemented geospatial distance-based academy/course search, Redis caching, AWS S3 presigned uploads, ExcelJS data exports, and Firebase Cloud Messaging (FCM) push notifications.',
+      'Configured Docker Compose environments, health-check endpoints, i18n localization (nestjs-i18n), and GitLab CI/CD deployment pipelines on AWS.'
     ],
     techGroups: {
-      Backend: ['Node.js', 'NestJS', 'TypeScript', 'OAuth2 (Kakao/Google/Naver)'],
-      Data: ['MySQL', 'TypeORM'],
-      'Cloud & Web': ['AWS (EC2, S3, RDS)', 'Docker', 'GitLab CI/CD', 'Linux', 'React']
+      Backend: ['Node.js', 'TypeScript', 'NestJS 9', 'TypeORM', 'Passport / JWT', 'nestjs-i18n'],
+      'Database & Cache': ['MySQL', 'Redis'],
+      'Cloud & Services': ['AWS (EC2, S3 Presigned Post, RDS)', 'Firebase Admin (FCM & Auth)', 'Kakao/Naver/Google/Apple OAuth2', 'ExcelJS', 'Docker', 'GitLab CI/CD', 'ReactJS']
     },
-    quickTags: ['Node.js / NestJS', 'TypeScript', 'MySQL', 'AWS', 'Docker']
+    quickTags: ['Node.js / NestJS', 'TypeScript', 'MySQL', 'Redis', 'AWS', 'Docker']
   },
   {
     id: 'chocolat-pc',
-    title: 'Chocolat PC — Commercial IoT Control Desktop',
+    title: 'Chocolat PC — Commercial BEMS & IoT Control Center',
     period: '10/2023 – 12/2024',
-    customer: 'Kumho Electronic',
+    customer: 'Kumho Electric',
     role: 'Backend Developer',
     teamSize: '8 (1 KR PM, 1 Tech Lead, 1 Tester, 3 FE, 2 BE)',
     category: 'enterprise-iot',
     categoryLabel: 'Enterprise & IoT',
     flagship: false,
     summary:
-      'Desktop remote-control system (React + Electron + Ant Design) empowering commercial building security teams to monitor and operate connected Light, Gateway, Smart Switch, and Smart Sensor devices in real time via Azure IoT Hub.',
+      'A commercial-building PC control center and Building Energy Management System (BEMS) for Kumho Electric, enabling facility operators to monitor floor plans and remotely control Smart Mesh IoT devices (20W Lights, 09/10 Smart Switches, Gateways/Bridges, and Motion/Brightness Sensors) in real time.',
     highlights: [
-      'Engineered NestJS RESTful APIs and MySQL (TypeORM) models backed by SHA-512 payload encryption and role-based login permission enforcement.',
-      'Built real-time Azure IoT Hub event listeners to ingest hardware state changes and synchronize telemetry across connected third-party device services.',
-      'Integrated Azure Blob Storage for building documents and partnered with the frontend team on interactive building floor-plan zone mapping.'
+      'Developed the NestJS 9 BEMS & PC control backend communicating bi-directionally with commercial building gateways via Azure IoT Hub and Azure Event Hubs (AMQP).',
+      'Implemented end-to-end security with AES-256-CBC (PKCS7) request/response payload encryption (CryptoJS), SHA-512 authentication hashing, and multi-role building/floor/zone access control.',
+      'Built real-time AzureIotHubSubscriber event consumers tracking gateway heartbeats, relay node protocols, bad-device diagnostics, and group/zone sensor automation.',
+      'Developed 2D building floor-plan zone marking APIs, OTA bridge firmware management, and Azure Blob Storage document/floor-plan upload pipelines.'
     ],
     techGroups: {
-      Backend: ['Node.js', 'NestJS', 'TypeScript', 'SHA-512 Encryption'],
-      Data: ['MySQL', 'TypeORM'],
-      'Azure & Clients': ['Azure IoT Hub', 'Azure VM', 'Azure Blob Storage', 'Docker', 'GitLab', 'React', 'Electron']
+      Backend: ['Node.js', 'TypeScript', 'NestJS 9', 'TypeORM', 'CryptoJS (AES-256-CBC, SHA-512)', 'nestjs-i18n (KR/EN)'],
+      'Database & Cache': ['MySQL', 'Redis (ioredis)'],
+      'Cloud, IoT & Desktop': ['Microsoft Azure (VM, IoT Hub, Event Hubs AMQP, Blob Storage)', 'New Relic APM', 'Docker', 'GitLab CI/CD', 'Electron', 'ReactJS', 'Ant Design']
     },
-    quickTags: ['Node.js / NestJS', 'TypeScript', 'MySQL', 'Azure', 'Docker']
+    quickTags: ['Node.js / NestJS', 'TypeScript', 'MySQL', 'Redis', 'Azure', 'Docker']
   },
   {
     id: 'chocolat',
-    title: 'Chocolat — Smart Building IoT Management Suite',
+    title: 'Chocolat — Smart Mesh & Building Energy IoT Suite',
     period: '07/2022 – 12/2024',
-    customer: 'Kumho Electronic',
+    customer: 'Kumho Electric',
     role: 'Backend Developer',
     teamSize: '11 (1 KR PM, 1 Tech Lead, 1 Tester, 2 FE, 4 Android, 3 BE)',
     category: 'enterprise-iot',
     categoryLabel: 'Enterprise & IoT',
     flagship: true,
     summary:
-      'Multi-client commercial building IoT ecosystem comprising a Kotlin Android BLE provisioning app and React Web Admin portal for managing multi-building device hierarchies, permissions, telemetry, and energy analytics.',
+      'A smart-building IoT management ecosystem for Kumho Electric comprising an Android BLE commissioning app and a Web Admin portal for provisioning buildings, floors, zones, groups, scenes, and analyzing energy consumption.',
     highlights: [
-      'Refactored and extended the existing NestJS + MySQL (TypeORM) codebase into a modular architecture supporting multi-building organization, account permissions, and full device CRUD.',
-      'Implemented scheduled cron jobs aggregating IoT device power consumption across weekly, monthly, and annual analytics intervals.',
-      'Connected Azure IoT Hub and Azure Blob Storage to manage device telemetry streams, document uploads, and synchronized building/device state across Android and Web Admin clients.'
+      'Architected and maintained the core NestJS 9 & MySQL/TypeORM backend powering both the Android Bluetooth Mesh app and Web Admin portal (440+ commits).',
+      'Engineered scheduled cron jobs (@nestjs/schedule) and sensor-brightness power-calculation formulas aggregating weekly, monthly, and annual energy usage across zones and device groups.',
+      'Built scene/schedule automation, smart-switch & motion-sensor perception logic, OTA firmware distribution (.gbl), and bilingual KR/EN internationalization.',
+      'Integrated Azure IoT Hub device twin/direct methods, Azure Event Hubs, Azure Blob Storage, Redis caching, Winston daily-rotating logs, and New Relic monitoring.'
     ],
     techGroups: {
-      Backend: ['Node.js', 'NestJS', 'TypeScript', 'Cron Jobs'],
-      Data: ['MySQL', 'TypeORM'],
-      'Azure & Clients': ['Azure IoT Hub', 'Azure VM', 'Azure Blob Storage', 'Docker', 'Kotlin (Android)', 'React']
+      Backend: ['Node.js', 'TypeScript', 'NestJS 9', 'TypeORM', '@nestjs/schedule', 'Winston'],
+      'Database & Cache': ['MySQL', 'Redis (ioredis)'],
+      'Cloud, IoT & Clients': ['Microsoft Azure (VM, IoT Hub, Event Hubs, Blob Storage)', 'New Relic', 'Docker', 'GitLab CI/CD', 'Kotlin (Android BLE)', 'ReactJS']
     },
-    quickTags: ['Node.js / NestJS', 'TypeScript', 'MySQL', 'Azure', 'Docker']
+    quickTags: ['Node.js / NestJS', 'TypeScript', 'MySQL', 'Redis', 'Azure', 'Docker']
   },
   {
     id: 'terafty',
     title: 'Terafty — Series Streaming & Community Funding',
-    period: '01/2022 – 06/2022',
-    customer: 'Terafty Client',
+    period: '01/2022 – 08/2022',
+    customer: 'Terafty Client (Korea)',
     role: 'Backend Developer',
     teamSize: '8 (1 KR PM, 1 Tech Lead, 1 Tester, 3 FE, 1 BE)',
     category: 'media-edtech',
     categoryLabel: 'Media, EdTech & Marketplace',
     flagship: false,
     summary:
-      'Interactive long-form series streaming and community crowdfunding platform featuring Admin and User portals where audiences watch episodes, answer creator Q&A prompts, and fund upcoming film productions.',
+      'An interactive long-form series streaming, audience voting, and community film crowdfunding platform comprising a User Web App and Admin Portal.',
     highlights: [
-      'Sole Backend Engineer designing the Express.js project structure and MongoDB (Mongoose) data schemas from the ground up.',
-      'Built RESTful APIs supporting episode publishing, audience Q&A feedback, community film-funding campaigns, and third-party data integrations.',
-      'Implemented KakaoTalk and Google social authentication alongside containerized deployments on AWS (EC2, S3, Lambda) and Docker.'
+      'Designed and built the Express.js & TypeScript backend from scratch using MongoDB (Mongoose) with pagination and auto-sequence pipelines (220+ commits).',
+      'Developed core modules for interactive series streaming, episode audience voting, community film crowdfunding campaigns, creator applications, comments, and hot-search/popular rankings.',
+      'Implemented Google & Kakao OAuth2 social login, JWT authentication, Joi request validation, AWS S3 media uploads, and full KR/EN internationalization (i18n) across all APIs.'
     ],
     techGroups: {
-      Backend: ['Node.js', 'Express.js', 'OAuth2 (Kakao/Google)'],
-      Data: ['MongoDB', 'Mongoose'],
-      'Cloud & Web': ['AWS (EC2, S3, Lambda)', 'Docker', 'GitLab', 'React', 'Ant Design']
+      Backend: ['Node.js', 'TypeScript', 'Express.js', 'Joi', 'JWT', 'i18n (KR/EN)'],
+      Database: ['MongoDB', 'Mongoose'],
+      'Cloud & Web': ['AWS (EC2, S3)', 'Google & Kakao OAuth2', 'Nodemailer', 'Docker', 'GitLab', 'ReactJS', 'Ant Design']
     },
-    quickTags: ['Node.js / NestJS', 'MongoDB', 'AWS', 'Docker']
+    quickTags: ['Node.js / NestJS', 'TypeScript', 'MongoDB', 'AWS', 'Docker']
   },
   {
     id: 'omn',
-    title: 'OMN — Multi-Platform Movie Streaming Suite',
+    title: 'OMN — OTT Movie & Series Streaming Platform',
     period: '08/2020 – 12/2021',
-    customer: 'OMN Media',
+    customer: 'OMN Media (Korea)',
     role: 'Backend Developer',
     teamSize: '15 (2 PMs, 1 Tech Lead, 1 Tester, 6 FE, 3 BE, 2 Mobile)',
     category: 'media-edtech',
     categoryLabel: 'Media, EdTech & Marketplace',
     flagship: false,
     summary:
-      'Netflix-style video streaming ecosystem spanning 3 Angular web applications (Online, Offline creator studio, Admin moderation) and native iOS/Android apps supporting creator uploads, daily showtimes, viewership analytics, and profit tracking.',
+      'An OTT movie and series streaming platform (Online Web, Offline Creator Portal, Admin Portal, and iOS/Android apps) supporting creator video uploads, DRM transcoding, viewership analytics, and revenue sharing.',
     highlights: [
-      'Designed Express.js backend modules and MongoDB (Mongoose) + Redis schemas powering streaming catalogs, creator uploads, and moderation workflows across 5 client apps.',
-      'Implemented asynchronous RabbitMQ message queues for background video/task processing and system-wide user notifications.',
-      'Integrated AWS S3 for media/file storage and deployed services using Docker and AWS Lambda/EC2 across bi-weekly Agile sprints.'
+      'Co-authored and maintained the Node.js/Express.js backend across 5 API suites (Online, Offline, Admin, Mobile, Payment, and DRM) backed by MongoDB (Mongoose), MySQL (Sequelize), and Redis (380+ commits).',
+      'Engineered the AWS Elemental MediaConvert DRM video transcoding pipeline converting uploaded master videos into adaptive DASH (.mpd) and HLS (.m3u8) streams for Web and Mobile.',
+      'Built background job queues (mongoose-queue, node-cron) for creator profit/billing settlement, automated multi-resolution poster/thumbnail resizing (Sharp, Jimp) on AWS S3, and In-App Purchase verification.',
+      'Implemented real-time notifications via Socket.IO, Firebase Admin (FCM), and Apple Push Notification service (APNs).'
     ],
     techGroups: {
-      Backend: ['Node.js', 'Express.js', 'RabbitMQ'],
-      Data: ['MongoDB', 'Mongoose', 'Redis'],
-      'Cloud & Clients': ['AWS (EC2, S3, Lambda)', 'Docker', 'GitLab', 'Angular', 'iOS & Android']
+      Backend: ['Node.js', 'Express.js', 'Socket.IO', 'Joi', 'JWT'],
+      Databases: ['MongoDB (Mongoose, mongoose-queue)', 'MySQL (Sequelize)', 'Redis'],
+      'Cloud & Media': ['AWS (Elemental MediaConvert DRM DASH/HLS, S3, EC2)', 'Sharp', 'Jimp', 'In-App Purchase', 'Firebase Admin & APNs', 'Docker', 'Angular', 'iOS & Android']
     },
-    quickTags: ['Node.js / NestJS', 'MongoDB', 'Redis', 'AWS', 'Docker']
+    quickTags: ['Node.js / NestJS', 'MongoDB', 'MySQL', 'Redis', 'AWS', 'Docker']
   },
   {
     id: 'sc-road',

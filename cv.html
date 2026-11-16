@@ -515,10 +515,10 @@
           <div class="entry-meta">07/2020 – 12/2024 | Ho Chi Minh City</div>
         </div>
         <ul class="bullets">
-          <li>Architected and delivered backend systems from inception to production for <strong>7 international products</strong> across IoT smart buildings (<em>Chocolat, Chocolat PC</em>), e-commerce logistics (<em>Busk</em>), EdTech (<em>Search Class</em>), media streaming (<em>OMN, Terafty</em>), and auto auctions (<em>SC Road</em>) using Node.js (NestJS, Express.js) and TypeScript.</li>
-          <li>Optimized data-retrieval queries and refactored backend architecture on the Busk logistics platform—<strong>reducing API response time by 20%</strong>—and integrated Shopee Open APIs for real-time order processing and multi-warehouse inventory sync.</li>
-          <li>Built real-time IoT device telemetry and remote-control backends for Kumho Electronic via Azure IoT Hub, Azure Blob Storage, SHA-512 payload encryption, and scheduled power-consumption aggregation cron jobs.</li>
-          <li>Implemented asynchronous RabbitMQ message queues, OAuth2 social logins (Google, KakaoTalk, Naver), relational/NoSQL schemas (MySQL/TypeORM, MongoDB, Firebase, Redis), and GitLab CI/CD pipelines on AWS and Azure.</li>
+          <li>Architected and delivered production backends across <strong>7 international products</strong> in Smart Building IoT &amp; BEMS (<em>Chocolat, Chocolat PC</em>), 3PL E-Commerce Fulfillment (<em>Busk</em>), K-12 EdTech (<em>Search Class</em>), OTT/VOD Media Streaming (<em>OMN, Terafty</em>), and Auto Auctions (<em>SC Road</em>) using Node.js (NestJS, Express.js) and TypeScript.</li>
+          <li>Built Kumho Electric's Smart Mesh &amp; BEMS IoT backend (<em>Chocolat / Chocolat PC</em>): engineered real-time Azure IoT Hub &amp; Azure Event Hubs (AMQP) telemetry subscribers, <strong>AES-256-CBC &amp; SHA-512</strong> payload encryption, OTA firmware management, and scheduled cron jobs calculating building power consumption across lights, smart switches, bridges, and sensors.</li>
+          <li>Engineered <strong>Shopee Open Platform v2</strong> integration for the Busk 4-portal 3PL fulfillment platform (HMAC-SHA256 signing, OAuth token lifecycle, real-time webhook order sync, airway-bill PDF &amp; invoice extraction, AWS SQS) and refactored warehouse/inventory queries to <strong>cut API latency by 20%</strong>.</li>
+          <li>Built 25+ NestJS modules and 5-provider OAuth2/SNS auth (Kakao, Naver, Google, Apple JWKS, Firebase) with FCM push notifications for <em>Search Class</em>; engineered AWS Elemental MediaConvert DRM video transcoding (DASH <code>.mpd</code> / HLS <code>.m3u8</code>), Socket.IO, and In-App Purchase profit-settlement jobs for <em>OMN</em> and <em>Terafty</em>.</li>
         </ul>
       </article>
 
@@ -605,14 +605,14 @@
       <article class="entry">
         <div class="entry-header">
           <div class="entry-title-group">
-            <span class="entry-org">4. Busk Logistics &amp; Kumho Chocolat IoT Platforms</span>
+            <span class="entry-org">4. Busk 3PL Logistics &amp; Kumho Electric BEMS IoT Platforms</span>
           </div>
           <div class="entry-meta">07/2022 – 12/2024 | Brickmate Group VN</div>
         </div>
-        <div class="entry-submeta">Node.js (NestJS), TypeScript, MySQL (TypeORM), Azure IoT Hub, Azure Blob Storage, AWS (EC2, S3), Docker, GitLab CI/CD</div>
+        <div class="entry-submeta">Node.js, NestJS 9, TypeScript, MySQL (TypeORM), Redis, Azure IoT Hub &amp; Event Hubs (AMQP), AES-256-CBC, Shopee Open API v2, AWS (EC2, S3, SQS), Docker</div>
         <ul class="bullets">
-          <li>Refactored Busk's 4-portal warehouse &amp; seller logistics backend (<strong>cutting API latency by 20%</strong>) and integrated Shopee Open APIs for real-time order processing and multi-warehouse inventory synchronization.</li>
-          <li>Built Kumho Electronic's commercial building IoT telemetry &amp; remote-control backend via Azure IoT Hub, SHA-512 payload encryption, Azure Blob Storage, and scheduled weekly/monthly/annual power-consumption aggregation jobs.</li>
+          <li>Refactored Busk's 4-portal cross-border 3PL fulfillment backend (<strong>cutting API latency by 20%</strong>) and engineered Shopee Open Platform v2 integration (HMAC-SHA256 signing, OAuth shop token lifecycle, real-time order/return sync, airway-bill PDF &amp; invoice extraction, AWS SQS).</li>
+          <li>Built Kumho Electric's Smart Mesh &amp; Building Energy Management System (BEMS) backend via Azure IoT Hub &amp; Event Hubs (AMQP), AES-256-CBC (PKCS7) &amp; SHA-512 encryption, OTA (<code>.gbl</code>) firmware management, and <code>@nestjs/schedule</code> power-consumption aggregation across commercial buildings.</li>
         </ul>
       </article>
     </section>
