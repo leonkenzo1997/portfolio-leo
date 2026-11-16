@@ -103,6 +103,26 @@
       border-bottom: 2px solid var(--accent-dark);
       padding-bottom: 10px;
       margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .cv-header-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .cv-avatar {
+      width: 66px;
+      height: 82px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 7px;
+      border: 1.5px solid var(--border);
+      flex-shrink: 0;
+      display: block;
     }
 
     .cv-name {
@@ -122,12 +142,12 @@
     }
 
     .cv-contact-row {
-      font-size: 8.7px;
+      font-size: 8.5px;
       color: var(--muted);
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 3px 6px;
+      gap: 2px 5px;
       line-height: 1.48;
     }
 
@@ -403,22 +423,25 @@
   <main class="cv-sheet">
     <!-- HEADER -->
     <header class="cv-header">
-      <h1 class="cv-name">TRUONG TANG QUANG (LEO)</h1>
-      <div class="cv-headline">Senior Backend Software Engineer (Golang &amp; Node.js) | AI-Native Engineering</div>
-      <div class="cv-contact-row">
-        <span class="cv-contact-item">Ho Chi Minh City, Vietnam</span>
-        <span class="cv-contact-sep">&bull;</span>
-        <span class="cv-contact-item">+84 799 759 531</span>
-        <span class="cv-contact-sep">&bull;</span>
-        <span class="cv-contact-item"><a href="mailto:truongtangquang1997@gmail.com">truongtangquang1997@gmail.com</a></span>
+      <div class="cv-header-info">
+        <h1 class="cv-name">TRUONG TANG QUANG (LEO)</h1>
+        <div class="cv-headline">Senior Backend Software Engineer (Golang &amp; Node.js) | AI-Native Engineering</div>
+        <div class="cv-contact-row">
+          <span class="cv-contact-item">Ho Chi Minh City, Vietnam</span>
+          <span class="cv-contact-sep">&bull;</span>
+          <span class="cv-contact-item">+84 799 759 531</span>
+          <span class="cv-contact-sep">&bull;</span>
+          <span class="cv-contact-item"><a href="mailto:truongtangquang1997@gmail.com">truongtangquang1997@gmail.com</a></span>
+          <span class="cv-contact-sep">&bull;</span>
+          <span class="cv-contact-item">GitHub: <a href="https://github.com/leonkenzo1997" target="_blank" rel="noopener">github.com/leonkenzo1997</a></span>
+        </div>
+        <div class="cv-contact-row">
+          <span class="cv-contact-item">Portfolio: <a href="https://leonkenzo1997.github.io/portfolio-leo" target="_blank" rel="noopener">https://leonkenzo1997.github.io/portfolio-leo</a></span>
+          <span class="cv-contact-sep">&bull;</span>
+          <span class="cv-contact-item">LinkedIn: <a href="https://www.linkedin.com/in/quang-truong-tang-1ba617157/" target="_blank" rel="noopener">linkedin.com/in/quang-truong-tang-1ba617157</a></span>
+        </div>
       </div>
-      <div class="cv-contact-row">
-        <span class="cv-contact-item">Portfolio: <a href="https://leonkenzo1997.github.io/portfolio-leo" target="_blank" rel="noopener">https://leonkenzo1997.github.io/portfolio-leo</a></span>
-        <span class="cv-contact-sep">&bull;</span>
-        <span class="cv-contact-item">GitHub: <a href="https://github.com/leonkenzo1997" target="_blank" rel="noopener">github.com/leonkenzo1997</a></span>
-        <span class="cv-contact-sep">&bull;</span>
-        <span class="cv-contact-item">LinkedIn: <a href="https://www.linkedin.com/in/quang-truong-tang-1ba617157/" target="_blank" rel="noopener">linkedin.com/in/quang-truong-tang-1ba617157</a></span>
-      </div>
+      <img class="cv-avatar" src="./avatar.jpg" alt="Truong Tang Quang" />
     </header>
 
     <!-- PROFILE -->
