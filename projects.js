@@ -9,6 +9,8 @@ const PROJECTS = [
     category: 'ai-retail',
     categoryLabel: 'AI & Retail Tech',
     flagship: true,
+    tagline:
+      '9-microservice Go platform powering sub-5s AI skin diagnostics, RAG SKU curation & 5-POS integration.',
     summary:
       'Advisor-led in-store AI Skin Curator platform for K-beauty retail comprising 9 Go microservices and 4 client apps (Curator Tablet, Customer App, Admin Portal, 3D Landing). Powers sub-5s P95 6-axis skin diagnostics, grounded Top-5 in-stock SKU recommendations, bilingual (KO/VI) scripts, digital signage casting, and SmartPOS integration.',
     highlights: [
@@ -44,6 +46,8 @@ const PROJECTS = [
     category: 'ai-retail',
     categoryLabel: 'AI & Retail Tech',
     flagship: true,
+    tagline:
+      '17-service Go retail media network with multi-LLM failover, 90s AI video rendering & Android TV signage.',
     summary:
       'End-to-end Retail Media Network managing digital signage advertising across retail chains. Spans 17 Go microservices, a Node.js Revideo/FFmpeg rendering worker, a 4-portal Flutter Web suite (Admin, Supplier, Advertiser, Landing), and a 24/7 Android TV player app.',
     highlights: [
@@ -79,6 +83,8 @@ const PROJECTS = [
     category: 'logistics',
     categoryLabel: 'Logistics & Supply Chain',
     flagship: true,
+    tagline:
+      'Nationwide express freight backend with automated daily inter-station debt reconciliation & COD workflows.',
     summary:
       'Nationwide inter-station express freight, parcel tracking, and cash-remittance platform. Digitizes end-to-end station operations including inbound/return handling, COD collection, automated daily inter-route debt reconciliation, accounting exports, and Zalo ZNS/SMS customer alerts.',
     highlights: [
@@ -113,6 +119,8 @@ const PROJECTS = [
     category: 'enterprise-iot',
     categoryLabel: 'Enterprise & IoT',
     flagship: false,
+    tagline:
+      'Enterprise multi-client messaging microservices paired with a Golang release-orchestration server (Pulse-SDMS).',
     summary:
       'Enterprise B2B messaging ecosystem spanning Super-Admin, Merchant Admin, Mobile App (Flutter), Web Chat (React), and PC Desktop (Electron Vue), paired with Pulse-SDMS—an internal deployment and release-version orchestration server built from scratch in Golang.',
     highlights: [
@@ -146,6 +154,8 @@ const PROJECTS = [
     category: 'logistics',
     categoryLabel: 'Logistics & Supply Chain',
     flagship: true,
+    tagline:
+      '4-portal cross-border 3PL fulfillment platform with Shopee OpenAPI v2 sync & -20% query latency optimization.',
     summary:
       'A 4-portal cross-border 3PL e-commerce fulfillment platform (Admin, Warehouse, Seller, and User portals) enabling sellers to connect marketplace stores, sync multi-warehouse inventory, negotiate import/storage requests, and automate order fulfillment.',
     highlights: [
@@ -179,6 +189,8 @@ const PROJECTS = [
     category: 'media-edtech',
     categoryLabel: 'Media, EdTech & Marketplace',
     flagship: false,
+    tagline:
+      '25-module NestJS K-12 EdTech platform with 5-provider OAuth2/SNS auth & geospatial academy search.',
     summary:
       'A K-12 education management and course discovery platform (Admin Portal, User Web App, and Landing Page) connecting students and parents with academies, lecturers, and grade-specific curricula (Grades 1–12) in Korea.',
     highlights: [
@@ -212,6 +224,8 @@ const PROJECTS = [
     category: 'enterprise-iot',
     categoryLabel: 'Enterprise & IoT',
     flagship: false,
+    tagline:
+      'Commercial Building Energy Management (BEMS) & 2D floor-plan IoT control via Azure IoT Hub (AMQP).',
     summary:
       'A commercial-building PC control center and Building Energy Management System (BEMS) for Kumho Electric, enabling facility operators to monitor floor plans and remotely control Smart Mesh IoT devices (20W Lights, 09/10 Smart Switches, Gateways/Bridges, and Motion/Brightness Sensors) in real time.',
     highlights: [
@@ -245,6 +259,8 @@ const PROJECTS = [
     category: 'enterprise-iot',
     categoryLabel: 'Enterprise & IoT',
     flagship: true,
+    tagline:
+      'Smart-building BLE Mesh & automated energy-aggregation backend for Kumho Electric (440+ commits).',
     summary:
       'A smart-building IoT management ecosystem for Kumho Electric comprising an Android BLE commissioning app and a Web Admin portal for provisioning buildings, floors, zones, groups, scenes, and analyzing energy consumption.',
     highlights: [
@@ -278,6 +294,8 @@ const PROJECTS = [
     category: 'media-edtech',
     categoryLabel: 'Media, EdTech & Marketplace',
     flagship: false,
+    tagline:
+      'Interactive series streaming, episode voting & community film crowdfunding backend in TypeScript.',
     summary:
       'An interactive long-form series streaming, audience voting, and community film crowdfunding platform comprising a User Web App and Admin Portal.',
     highlights: [
@@ -309,6 +327,8 @@ const PROJECTS = [
     category: 'media-edtech',
     categoryLabel: 'Media, EdTech & Marketplace',
     flagship: false,
+    tagline:
+      'Multi-platform OTT streaming backend with AWS Elemental MediaConvert DRM (DASH/HLS) & billing queues.',
     summary:
       'An OTT movie and series streaming platform (Online Web, Offline Creator Portal, Admin Portal, and iOS/Android apps) supporting creator video uploads, DRM transcoding, viewership analytics, and revenue sharing.',
     highlights: [
@@ -342,6 +362,8 @@ const PROJECTS = [
     category: 'media-edtech',
     categoryLabel: 'Media, EdTech & Marketplace',
     flagship: false,
+    tagline:
+      'Real-time mobile used-car auction marketplace connecting dealers and private sellers on Express & Firebase.',
     summary:
       'Cross-platform Ionic Angular mobile auction marketplace connecting car dealers, private sellers, and administrators across Dealer Bidding App, Seller Listing App, and Admin Portal.',
     highlights: [
@@ -372,6 +394,8 @@ const PROJECTS = [
     category: 'telecom',
     categoryLabel: 'Telecom & Carrier Billing',
     flagship: false,
+    tagline:
+      'Enterprise SIP Trunk hotline provisioning & real-time carrier billing integration for Viettel Group.',
     summary:
       'Enterprise hotline and telecom package management portal for Viettel Group enabling Vietnamese SMBs to register/manage hotline extensions and subscribe to or cancel carrier SIP Trunk packages.',
     highlights: [
@@ -403,6 +427,8 @@ const PROJECTS = [
     category: 'telecom',
     categoryLabel: 'Telecom & Carrier Billing',
     flagship: false,
+    tagline:
+      'SMB hotline & telecom subscription platform integrated with Mobifone carrier billing servers.',
     summary:
       'Enterprise hotline and telecom subscription platform for Mobifone empowering SMBs across Vietnam to provision hotline numbers, extensions, and carrier network packages.',
     highlights: [
@@ -443,7 +469,7 @@ const QUICK_TECHS = [
 ];
 
 const state = {
-  category: 'all',
+  category: 'flagship',
   tech: null,
   search: ''
 };
@@ -468,8 +494,23 @@ function renderImpactMetrics(metrics) {
     .join('')}</div>`;
 }
 
+function setActiveCategory(category) {
+  state.category = category;
+  document.querySelectorAll('.pill[data-category]').forEach((el) => {
+    el.classList.toggle('active', el.dataset.category === category);
+  });
+}
+
+function hasActiveSearchOrTech() {
+  return Boolean(state.tech) || state.search.trim() !== '';
+}
+
 function matchesFilters(project) {
-  if (state.category !== 'all' && project.category !== state.category) {
+  if (state.category === 'flagship') {
+    if (!hasActiveSearchOrTech() && !project.flagship) {
+      return false;
+    }
+  } else if (state.category !== 'all' && project.category !== state.category) {
     return false;
   }
 
@@ -486,6 +527,7 @@ function matchesFilters(project) {
       project.title,
       project.customer,
       project.role,
+      project.tagline || '',
       project.summary,
       project.categoryLabel,
       ...(project.metrics || []),
@@ -520,20 +562,25 @@ function renderQuickTechs() {
 function renderProjects() {
   const grid = document.getElementById('projectsGrid');
   const meta = document.getElementById('resultsMeta');
+  const toggleWrap = document.getElementById('projectsToggleWrap');
   const filtered = PROJECTS.filter(matchesFilters);
+  const searching = hasActiveSearchOrTech();
 
   const activeFilters = [];
-  if (state.category !== 'all') {
+  if (state.category !== 'all' && !(state.category === 'flagship' && searching)) {
     const activePill = document.querySelector(`.pill[data-category="${state.category}"]`);
     if (activePill) activeFilters.push(activePill.textContent.trim());
   }
   if (state.tech) activeFilters.push(`Stack: ${state.tech}`);
   if (state.search.trim()) activeFilters.push(`Search: "${state.search.trim()}"`);
 
-  meta.textContent =
-    activeFilters.length > 0
-      ? `Showing ${filtered.length} of ${PROJECTS.length} projects (${activeFilters.join(' • ')})`
-      : `Showing all ${PROJECTS.length} production systems across AI/Retail, Logistics, IoT, Media/EdTech & Telecom`;
+  if (state.category === 'flagship' && !searching) {
+    meta.textContent = `Showing ${filtered.length} featured flagship systems (out of ${PROJECTS.length} production systems)`;
+  } else if (activeFilters.length > 0) {
+    meta.textContent = `Showing ${filtered.length} of ${PROJECTS.length} projects (${activeFilters.join(' • ')})`;
+  } else {
+    meta.textContent = `Showing all ${PROJECTS.length} production systems across AI/Retail, Logistics, IoT, Media/EdTech & Telecom`;
+  }
 
   if (filtered.length === 0) {
     grid.innerHTML = `
@@ -542,6 +589,7 @@ function renderProjects() {
         <button type="button" class="btn btn-sm" id="resetFiltersBtn">Reset all filters</button>
       </div>
     `;
+    if (toggleWrap) toggleWrap.innerHTML = '';
     const resetBtn = document.getElementById('resetFiltersBtn');
     if (resetBtn) {
       resetBtn.addEventListener('click', resetAllFilters);
@@ -551,10 +599,16 @@ function renderProjects() {
 
   grid.innerHTML = filtered
     .map((p) => {
-      const tags = getAllTags(p).slice(0, 8);
+      const tags = getAllTags(p).slice(0, 5);
       const flagshipBadge = p.flagship
         ? '<span class="badge badge-flagship">CV Flagship</span>'
         : '';
+      const archPreview =
+        p.archFlow && p.archFlow.length > 0
+          ? `<div class="card-arch-preview">${p.archFlow
+              .map((s) => escapeHtml(s.title))
+              .join(' <span>&rarr;</span> ')}</div>`
+          : '';
 
       return `
         <article class="project-card ${p.flagship ? 'flagship' : ''}">
@@ -575,14 +629,9 @@ function renderProjects() {
             ${renderImpactMetrics(p.metrics)}
           </div>
 
-          <p class="project-summary">${escapeHtml(p.summary)}</p>
+          <p class="project-summary">${escapeHtml(p.tagline || p.summary)}</p>
 
-          <ul class="highlight-list">
-            ${p.highlights
-              .slice(0, 2)
-              .map((h) => `<li>${escapeHtml(h)}</li>`)
-              .join('')}
-          </ul>
+          ${archPreview}
 
           <div class="tags-wrap">
             ${tags
@@ -603,6 +652,27 @@ function renderProjects() {
       `;
     })
     .join('');
+
+  if (toggleWrap) {
+    if (!searching && state.category === 'flagship') {
+      const extraCount = PROJECTS.length - filtered.length;
+      toggleWrap.innerHTML = `<button type="button" class="btn" id="toggleAllProjectsBtn">Show All ${PROJECTS.length} Production Systems (+${extraCount} More Projects) &darr;</button>`;
+      document.getElementById('toggleAllProjectsBtn')?.addEventListener('click', () => {
+        setActiveCategory('all');
+        renderProjects();
+      });
+    } else if (!searching && state.category === 'all') {
+      const flagshipCount = PROJECTS.filter((p) => p.flagship).length;
+      toggleWrap.innerHTML = `<button type="button" class="btn" id="toggleAllProjectsBtn">Show Only ${flagshipCount} Featured Flagships &uarr;</button>`;
+      document.getElementById('toggleAllProjectsBtn')?.addEventListener('click', () => {
+        setActiveCategory('flagship');
+        renderProjects();
+        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+      });
+    } else {
+      toggleWrap.innerHTML = '';
+    }
+  }
 }
 
 function copyTextToClipboard(text) {
@@ -771,14 +841,11 @@ function closeProjectModal() {
 }
 
 function resetAllFilters() {
-  state.category = 'all';
+  setActiveCategory('flagship');
   state.tech = null;
   state.search = '';
   document.getElementById('projectSearch').value = '';
   document.getElementById('searchClear').classList.remove('visible');
-  document.querySelectorAll('.pill[data-category]').forEach((el) => {
-    el.classList.toggle('active', el.dataset.category === 'all');
-  });
   renderQuickTechs();
   renderProjects();
 }
@@ -1020,10 +1087,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('categoryPills').addEventListener('click', (e) => {
     const btn = e.target.closest('.pill[data-category]');
     if (!btn) return;
-    state.category = btn.dataset.category;
-    document.querySelectorAll('.pill[data-category]').forEach((el) => {
-      el.classList.toggle('active', el === btn);
-    });
+    setActiveCategory(btn.dataset.category);
     renderProjects();
   });
 
@@ -1063,14 +1127,16 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.focus();
   });
 
-  // Project card interactions (modal open or inline tag search)
-  document.getElementById('projectsGrid').addEventListener('click', (e) => {
+  // Global modal triggers (Project cards + Work Experience chips)
+  document.addEventListener('click', (e) => {
     const modalBtn = e.target.closest('[data-open-modal]');
     if (modalBtn) {
       openProjectModal(modalBtn.dataset.openModal);
-      return;
     }
+  });
 
+  // Inline tag search inside project cards
+  document.getElementById('projectsGrid').addEventListener('click', (e) => {
     const tagBtn = e.target.closest('[data-inline-tag]');
     if (tagBtn) {
       const tag = tagBtn.dataset.inlineTag;

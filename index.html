@@ -69,8 +69,23 @@
             <p class="hero-subtitle">Senior Backend &amp; Fullstack Software Engineer (Golang, Node.js, React, Flutter) | AI-Native Engineering</p>
 
             <p class="hero-desc">
-              Experienced Backend and Fullstack Software Engineer with a Bachelor of Computer Science and over 5 years of hands-on experience building scalable microservices, event-driven backends, and end-to-end web applications using <strong>Golang</strong>, <strong>Node.js (NestJS/Express.js)</strong>, <strong>TypeScript</strong>, <strong>ReactJS</strong>, and <strong>Flutter Web</strong>. Proficient in architecting RESTful APIs, distributed databases, real-time systems, and responsive admin/client portals with a strong focus on performance optimization and security. Actively advancing along an AI-Native Software Engineer path—integrating multimodal LLM and RAG pipelines into production products while leveraging multi-agent AI workflows to accelerate full-lifecycle software delivery. Open to <strong>Senior Backend, Fullstack, and AI-Native Software Engineer</strong> roles, bringing strong end-to-end ownership from system architecture and backend infrastructure to user-facing interfaces and modern AI capabilities.
+              <strong>5+ years</strong> building scalable distributed backends in <strong>Golang</strong> &amp; <strong>Node.js (NestJS)</strong>, fullstack web apps, and production <strong>LLM / RAG</strong> systems with multi-agent delivery workflows.
             </p>
+
+            <div class="hero-pillars">
+              <div class="pillar-chip">
+                <span class="pillar-title">Distributed Backend</span>
+                <span class="pillar-sub">Golang &bull; NestJS &bull; Kafka &bull; Microservices</span>
+              </div>
+              <div class="pillar-chip">
+                <span class="pillar-title">Production AI &amp; RAG</span>
+                <span class="pillar-sub">GPT-4o Vision &bull; Hybrid Search &bull; Multi-Agent</span>
+              </div>
+              <div class="pillar-chip">
+                <span class="pillar-title">Fullstack &amp; Cloud</span>
+                <span class="pillar-sub">ReactJS &bull; Flutter Web &bull; AKS &bull; ArgoCD</span>
+              </div>
+            </div>
           </div>
           <div class="hero-avatar-wrap">
             <img src="./avatar.jpg" alt="Truong Tang Quang (Leo)" class="hero-avatar" />
@@ -132,7 +147,8 @@
         <div class="controls-panel">
           <div class="controls-top">
             <div id="categoryPills" class="filter-pills" role="tablist" aria-label="Project domain filters">
-              <button type="button" class="pill active" data-category="all">All Projects (13)</button>
+              <button type="button" class="pill active" data-category="flagship">&#9733; Featured Flagships (5)</button>
+              <button type="button" class="pill" data-category="all">All Systems (13)</button>
               <button type="button" class="pill" data-category="ai-retail">AI &amp; Retail Tech (2)</button>
               <button type="button" class="pill" data-category="logistics">Logistics &amp; Supply Chain (2)</button>
               <button type="button" class="pill" data-category="enterprise-iot">Enterprise &amp; IoT (3)</button>
@@ -157,6 +173,7 @@
 
         <div id="resultsMeta" class="results-meta"></div>
         <div id="projectsGrid" class="projects-grid"></div>
+        <div id="projectsToggleWrap" class="projects-toggle-wrap"></div>
       </div>
     </section>
 
@@ -173,39 +190,71 @@
         <div class="skills-matrix">
           <div class="skill-box">
             <h3>AI &amp; Agentic Engineering</h3>
-            <p>
-              Multimodal LLM Orchestration, RAG &amp; Hybrid Vector Search, Multi-Agent Workflows, Model Context Protocol (MCP), Context &amp; Prompt Engineering, AI-Augmented TDD &amp; Automated Code Review | Azure OpenAI (GPT-4o Vision/Text, text-embedding-3-large), Gemini, Groq, Cloudflare Workers AI (FLUX), Azure AI Search, Claude Code, Antigravity
-            </p>
+            <div class="skill-pills">
+              <span class="skill-pill primary">GPT-4o Vision/Text</span>
+              <span class="skill-pill primary">RAG &amp; Vector Search</span>
+              <span class="skill-pill primary">Multi-Agent Workflows</span>
+              <span class="skill-pill">Azure AI Search</span>
+              <span class="skill-pill">Gemini &amp; Groq</span>
+              <span class="skill-pill">Cloudflare FLUX</span>
+              <span class="skill-pill">MCP &amp; Prompt Eng.</span>
+              <span class="skill-pill">Claude Code &amp; Antigravity</span>
+            </div>
           </div>
           <div class="skill-box">
             <h3>Backend Architecture</h3>
-            <p>
-              Golang (Gin, GORM, Google Wire, Goose), Node.js, TypeScript / JavaScript (NestJS, Express.js) | Microservices, Event-Driven Architecture, Anti-Corruption Layer (ACL), RESTful APIs, WebSocket, OAuth2 / JWT / PASETO, TOTP 2FA (AES-256-GCM)
-            </p>
+            <div class="skill-pills">
+              <span class="skill-pill primary">Golang (Gin, GORM)</span>
+              <span class="skill-pill primary">Node.js / NestJS</span>
+              <span class="skill-pill primary">TypeScript</span>
+              <span class="skill-pill">Express.js</span>
+              <span class="skill-pill">Microservices &amp; ACL</span>
+              <span class="skill-pill">Event-Driven &amp; WebSocket</span>
+              <span class="skill-pill">PASETO / JWT / TOTP 2FA</span>
+            </div>
           </div>
           <div class="skill-box">
             <h3>Data &amp; Messaging</h3>
-            <p>
-              PostgreSQL 16, CockroachDB, MySQL / MariaDB (GORM, TypeORM, Sequelize), MongoDB (Mongoose), Redis (Azure Cache for Redis), Apache Kafka, Azure Event Hubs, RabbitMQ, Elasticsearch
-            </p>
+            <div class="skill-pills">
+              <span class="skill-pill primary">PostgreSQL 16</span>
+              <span class="skill-pill primary">Redis</span>
+              <span class="skill-pill primary">Apache Kafka</span>
+              <span class="skill-pill">CockroachDB</span>
+              <span class="skill-pill">MongoDB</span>
+              <span class="skill-pill">MySQL / MariaDB</span>
+              <span class="skill-pill">Azure Event Hubs</span>
+              <span class="skill-pill">RabbitMQ &amp; Elasticsearch</span>
+            </div>
           </div>
           <div class="skill-box">
             <h3>Cloud &amp; DevOps</h3>
-            <p>
-              Microsoft Azure (AKS, ACR, Blob Storage, CDN, AI Search, IoT Hub), AWS (EC2, S3, Lambda), Kubernetes, ArgoCD (GitOps), Helm, Docker, PM2, GitHub Actions &amp; GitLab CI/CD, Nginx, HAProxy, Grafana, Loki, Linux
-            </p>
+            <div class="skill-pills">
+              <span class="skill-pill primary">Microsoft Azure (AKS)</span>
+              <span class="skill-pill primary">Kubernetes &amp; ArgoCD</span>
+              <span class="skill-pill primary">Docker &amp; CI/CD</span>
+              <span class="skill-pill">AWS (EC2, S3, SQS)</span>
+              <span class="skill-pill">Helm &amp; PM2</span>
+              <span class="skill-pill">GitHub Actions &amp; GitLab</span>
+              <span class="skill-pill">Grafana &amp; Loki</span>
+            </div>
           </div>
           <div class="skill-box">
             <h3>Frontend &amp; Tooling</h3>
-            <p>
-              ReactJS, Flutter Web (Riverpod, BLoC) | Git, Jest, Supertest, OpenAPI / Swagger, ClickUp, Jira, Notion, Agile / Scrum
-            </p>
+            <div class="skill-pills">
+              <span class="skill-pill primary">ReactJS</span>
+              <span class="skill-pill primary">Flutter Web</span>
+              <span class="skill-pill">Jest &amp; Supertest</span>
+              <span class="skill-pill">OpenAPI / Swagger</span>
+              <span class="skill-pill">Git &amp; Agile/Scrum</span>
+              <span class="skill-pill">Jira &amp; ClickUp</span>
+            </div>
           </div>
           <div class="skill-box">
             <h3>Languages</h3>
-            <p>
-              English (Professional Working Proficiency) &bull; Vietnamese (Native)
-            </p>
+            <div class="skill-pills">
+              <span class="skill-pill primary">Vietnamese (Native)</span>
+              <span class="skill-pill primary">English (Professional Working)</span>
+            </div>
           </div>
         </div>
       </div>
@@ -227,12 +276,22 @@
               <div class="exp-role">AI-Native Software Engineer (Core Backend) &mdash; <span class="exp-company">MTS Corporation VN</span></div>
               <div class="exp-date">01/2026 – Present &bull; Ho Chi Minh City</div>
             </div>
-            <ul class="highlight-list">
-              <li>Architected and built production Go microservices (9 services for COSMO8; 17 services + Node.js Revideo worker for RMN) backed by PostgreSQL 16, CockroachDB, Redis, and Apache Kafka (Azure Event Hubs).</li>
-              <li>Engineered multimodal AI &amp; RAG pipelines: GPT-4o Vision/Text + Azure AI Search for sub-5s P95 skin diagnostics &amp; grounded SKU curation (COSMO8), and multi-LLM/image failover gateway with automated 90s ad video rendering (RMN).</li>
-              <li>Designed SmartPOS Anti-Corruption Layers (5 adapters, HMAC webhooks, transactional outbox), real-time WebSocket Android TV multi-zone signage orchestration, and AES-256-GCM TOTP 2FA &amp; PASETO/Redis auth.</li>
-              <li>Built multi-agent AI engineering harnesses (.claude / .agents) with automated cross-model code review gates, knowledge-graph indexing, RED-GREEN TDD workflows, and Kubernetes (AKS) + ArgoCD GitOps CI/CD.</li>
-            </ul>
+            <p class="exp-summary">
+              Architected 26+ production Go microservices, multimodal GPT-4o/RAG pipelines, SmartPOS Anti-Corruption Layers, and multi-agent AI engineering harnesses on AKS + ArgoCD.
+            </p>
+            <div class="exp-proj-links">
+              <button type="button" class="exp-proj-chip" data-open-modal="cosmo8">COSMO8 &rarr;</button>
+              <button type="button" class="exp-proj-chip" data-open-modal="rmn">RMN &rarr;</button>
+            </div>
+            <details class="exp-details">
+              <summary>Show detailed achievements (4)</summary>
+              <ul class="highlight-list">
+                <li>Architected and built production Go microservices (9 services for COSMO8; 17 services + Node.js Revideo worker for RMN) backed by PostgreSQL 16, CockroachDB, Redis, and Apache Kafka (Azure Event Hubs).</li>
+                <li>Engineered multimodal AI &amp; RAG pipelines: GPT-4o Vision/Text + Azure AI Search for sub-5s P95 skin diagnostics &amp; grounded SKU curation (COSMO8), and multi-LLM/image failover gateway with automated 90s ad video rendering (RMN).</li>
+                <li>Designed SmartPOS Anti-Corruption Layers (5 adapters, HMAC webhooks, transactional outbox), real-time WebSocket Android TV multi-zone signage orchestration, and AES-256-GCM TOTP 2FA &amp; PASETO/Redis auth.</li>
+                <li>Built multi-agent AI engineering harnesses (.claude / .agents) with automated cross-model code review gates, knowledge-graph indexing, RED-GREEN TDD workflows, and Kubernetes (AKS) + ArgoCD GitOps CI/CD.</li>
+              </ul>
+            </details>
           </article>
 
           <article class="exp-card">
@@ -240,11 +299,20 @@
               <div class="exp-role">Freelance Backend Developer &mdash; <span class="exp-company">GiaPhuoc-Express</span></div>
               <div class="exp-date">06/2025 – 03/2026 &bull; Ho Chi Minh City</div>
             </div>
-            <ul class="highlight-list">
-              <li>Engineered core backend services for a nationwide inter-station express freight and cash-remittance platform using Node.js 20, TypeScript (strict mode), Express.js, Zod, 4-tier JWT RBAC, and MongoDB (Mongoose).</li>
-              <li>Architected the automated daily inter-station debt reconciliation engine and PM2 cronjobs—enforcing Vietnam-to-UTC timezone boundaries, idempotent execution locks, atomic MongoDB bulkWrite transactions, and aggregation-based DebtReport &amp; accounting export APIs.</li>
-              <li>Built inbound/return parcel workflows, inter-branch cash &amp; COD remittances, proof-of-delivery image upload pipelines (Multer), Zalo ZNS/SMS notifications, and Jest/Supertest integration tests deployed via GitHub Actions CI/CD.</li>
-            </ul>
+            <p class="exp-summary">
+              Built core Node.js/TypeScript freight &amp; COD remittance backend with automated daily atomic MongoDB debt reconciliation and Zalo ZNS notifications.
+            </p>
+            <div class="exp-proj-links">
+              <button type="button" class="exp-proj-chip" data-open-modal="giaphuoc-express">GiaPhuoc-Express &rarr;</button>
+            </div>
+            <details class="exp-details">
+              <summary>Show detailed achievements (3)</summary>
+              <ul class="highlight-list">
+                <li>Engineered core backend services for a nationwide inter-station express freight and cash-remittance platform using Node.js 20, TypeScript (strict mode), Express.js, Zod, 4-tier JWT RBAC, and MongoDB (Mongoose).</li>
+                <li>Architected the automated daily inter-station debt reconciliation engine and PM2 cronjobs—enforcing Vietnam-to-UTC timezone boundaries, idempotent execution locks, atomic MongoDB bulkWrite transactions, and aggregation-based DebtReport &amp; accounting export APIs.</li>
+                <li>Built inbound/return parcel workflows, inter-branch cash &amp; COD remittances, proof-of-delivery image upload pipelines (Multer), Zalo ZNS/SMS notifications, and Jest/Supertest integration tests deployed via GitHub Actions CI/CD.</li>
+              </ul>
+            </details>
           </article>
 
           <article class="exp-card">
@@ -252,11 +320,20 @@
               <div class="exp-role">Backend Developer &mdash; <span class="exp-company">Link Technology Crossborder</span></div>
               <div class="exp-date">04/2025 – 08/2025 &bull; Ho Chi Minh City</div>
             </div>
-            <ul class="highlight-list">
-              <li>Designed and built Pulse-SDMS from scratch using Golang (Gin) and MySQL—an internal deployment and release-version management system orchestrating servers across company projects.</li>
-              <li>Maintained and enhanced distributed microservices for the Pulseim enterprise messaging suite (gateway-server, im-server, chat-server), implementing revamped login flows, group-chat APIs, and merchant account management.</li>
-              <li>Resolved staging/dev deployment bottlenecks and maintained containerized infrastructure on AWS (EC2, S3) and Docker within a 15-member cross-border engineering team.</li>
-            </ul>
+            <p class="exp-summary">
+              Built Pulse-SDMS release-orchestration server in Golang (Gin/MySQL) from scratch and maintained distributed messaging microservices across AWS &amp; Docker.
+            </p>
+            <div class="exp-proj-links">
+              <button type="button" class="exp-proj-chip" data-open-modal="pulseim">Pulseim &amp; Pulse-SDMS &rarr;</button>
+            </div>
+            <details class="exp-details">
+              <summary>Show detailed achievements (3)</summary>
+              <ul class="highlight-list">
+                <li>Designed and built Pulse-SDMS from scratch using Golang (Gin) and MySQL—an internal deployment and release-version management system orchestrating servers across company projects.</li>
+                <li>Maintained and enhanced distributed microservices for the Pulseim enterprise messaging suite (gateway-server, im-server, chat-server), implementing revamped login flows, group-chat APIs, and merchant account management.</li>
+                <li>Resolved staging/dev deployment bottlenecks and maintained containerized infrastructure on AWS (EC2, S3) and Docker within a 15-member cross-border engineering team.</li>
+              </ul>
+            </details>
           </article>
 
           <article class="exp-card">
@@ -264,12 +341,27 @@
               <div class="exp-role">Backend Developer &mdash; <span class="exp-company">Brickmate Group VN</span></div>
               <div class="exp-date">07/2020 – 12/2024 &bull; Ho Chi Minh City</div>
             </div>
-            <ul class="highlight-list">
-              <li>Architected and delivered production backends across 7 international products in Smart Building IoT &amp; BEMS (Chocolat, Chocolat PC), 3PL E-Commerce Fulfillment (Busk), K-12 EdTech (Search Class), OTT/VOD Media Streaming (OMN, Terafty), and Auto Auctions (SC Road) using Node.js (NestJS, Express.js) and TypeScript.</li>
-              <li>Built Kumho Electric's Smart Mesh &amp; BEMS IoT backend (Chocolat / Chocolat PC): engineered real-time Azure IoT Hub &amp; Azure Event Hubs (AMQP) telemetry subscribers, AES-256-CBC &amp; SHA-512 payload encryption, OTA firmware management, and scheduled cron jobs calculating building power consumption across lights, smart switches, bridges, and sensors.</li>
-              <li>Engineered Shopee Open Platform v2 integration for the Busk 4-portal 3PL fulfillment platform (HMAC-SHA256 signing, OAuth token lifecycle, real-time webhook order sync, airway-bill PDF &amp; invoice extraction, AWS SQS) and refactored warehouse/inventory queries to cut API latency by 20%.</li>
-              <li>Built 25+ NestJS modules and 5-provider OAuth2/SNS auth (Kakao, Naver, Google, Apple JWKS, Firebase) with FCM push notifications for Search Class; engineered AWS Elemental MediaConvert DRM video transcoding (DASH .mpd / HLS .m3u8), Socket.IO, and In-App Purchase profit-settlement jobs for OMN and Terafty.</li>
-            </ul>
+            <p class="exp-summary">
+              Delivered 7 international backends in NestJS/Express &amp; TypeScript spanning Smart Building IoT (Azure AMQP), 3PL Logistics (Shopee API v2), K-12 EdTech, OTT DRM, and Auto Auctions.
+            </p>
+            <div class="exp-proj-links">
+              <button type="button" class="exp-proj-chip" data-open-modal="busk">Busk 3PL &rarr;</button>
+              <button type="button" class="exp-proj-chip" data-open-modal="chocolat">Chocolat IoT &rarr;</button>
+              <button type="button" class="exp-proj-chip" data-open-modal="chocolat-pc">Chocolat PC &rarr;</button>
+              <button type="button" class="exp-proj-chip" data-open-modal="search-class">Search Class &rarr;</button>
+              <button type="button" class="exp-proj-chip" data-open-modal="omn">OMN OTT &rarr;</button>
+              <button type="button" class="exp-proj-chip" data-open-modal="terafty">Terafty &rarr;</button>
+              <button type="button" class="exp-proj-chip" data-open-modal="sc-road">SC Road &rarr;</button>
+            </div>
+            <details class="exp-details">
+              <summary>Show detailed achievements (4)</summary>
+              <ul class="highlight-list">
+                <li>Architected and delivered production backends across 7 international products in Smart Building IoT &amp; BEMS (Chocolat, Chocolat PC), 3PL E-Commerce Fulfillment (Busk), K-12 EdTech (Search Class), OTT/VOD Media Streaming (OMN, Terafty), and Auto Auctions (SC Road) using Node.js (NestJS, Express.js) and TypeScript.</li>
+                <li>Built Kumho Electric's Smart Mesh &amp; BEMS IoT backend (Chocolat / Chocolat PC): engineered real-time Azure IoT Hub &amp; Azure Event Hubs (AMQP) telemetry subscribers, AES-256-CBC &amp; SHA-512 payload encryption, OTA firmware management, and scheduled cron jobs calculating building power consumption across lights, smart switches, bridges, and sensors.</li>
+                <li>Engineered Shopee Open Platform v2 integration for the Busk 4-portal 3PL fulfillment platform (HMAC-SHA256 signing, OAuth token lifecycle, real-time webhook order sync, airway-bill PDF &amp; invoice extraction, AWS SQS) and refactored warehouse/inventory queries to cut API latency by 20%.</li>
+                <li>Built 25+ NestJS modules and 5-provider OAuth2/SNS auth (Kakao, Naver, Google, Apple JWKS, Firebase) with FCM push notifications for Search Class; engineered AWS Elemental MediaConvert DRM video transcoding (DASH .mpd / HLS .m3u8), Socket.IO, and In-App Purchase profit-settlement jobs for OMN and Terafty.</li>
+              </ul>
+            </details>
           </article>
 
           <article class="exp-card">
@@ -277,10 +369,20 @@
               <div class="exp-role">Fullstack Developer &mdash; <span class="exp-company">VHT Company (Virtual Hybrid Telecom)</span></div>
               <div class="exp-date">11/2019 – 06/2020 &bull; Ho Chi Minh City</div>
             </div>
-            <ul class="highlight-list">
-              <li>Developed enterprise SIP Trunk hotline and telecom package management platforms for Viettel Group and Mobifone using React, PHP, MariaDB, Redis, Elasticsearch, and Docker.</li>
-              <li>Integrated directly with carrier billing servers for real-time subscription synchronization, automated monthly/annual package renewals, and high-volume telecom data processing.</li>
-            </ul>
+            <p class="exp-summary">
+              Developed enterprise SIP Trunk hotline portals for Viettel &amp; Mobifone with real-time carrier billing sync and automated package renewals.
+            </p>
+            <div class="exp-proj-links">
+              <button type="button" class="exp-proj-chip" data-open-modal="viettel-sip-trunk">Viettel SIP Trunk &rarr;</button>
+              <button type="button" class="exp-proj-chip" data-open-modal="mobifone-sip-trunk">Mobifone SIP Trunk &rarr;</button>
+            </div>
+            <details class="exp-details">
+              <summary>Show detailed achievements (2)</summary>
+              <ul class="highlight-list">
+                <li>Developed enterprise SIP Trunk hotline and telecom package management platforms for Viettel Group and Mobifone using React, PHP, MariaDB, Redis, Elasticsearch, and Docker.</li>
+                <li>Integrated directly with carrier billing servers for real-time subscription synchronization, automated monthly/annual package renewals, and high-volume telecom data processing.</li>
+              </ul>
+            </details>
           </article>
 
           <article class="exp-card">
@@ -288,9 +390,15 @@
               <div class="exp-role">Internship Developer &mdash; <span class="exp-company">VHT Company (Virtual Hybrid Telecom)</span></div>
               <div class="exp-date">07/2019 – 10/2019 &bull; Ho Chi Minh City</div>
             </div>
-            <ul class="highlight-list">
-              <li>Gained hands-on experience with production telecom infrastructure and distributed system patterns (microservices, MVC architecture, Docker, HAProxy load balancing) and independently provisioned staging/test servers in agile workflows.</li>
-            </ul>
+            <p class="exp-summary">
+              Provisioned staging/test environments with Docker &amp; HAProxy and learned production microservices patterns in agile telecom workflows.
+            </p>
+            <details class="exp-details">
+              <summary>Show detailed achievements (1)</summary>
+              <ul class="highlight-list">
+                <li>Gained hands-on experience with production telecom infrastructure and distributed system patterns (microservices, MVC architecture, Docker, HAProxy load balancing) and independently provisioned staging/test servers in agile workflows.</li>
+              </ul>
+            </details>
           </article>
         </div>
       </div>
